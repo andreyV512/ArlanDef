@@ -1,0 +1,426 @@
+﻿	<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+		<PropertyGroup>
+			<ProjectGuid>{56ECEC77-F39C-4164-8B8A-DB2066DE8EC4}</ProjectGuid>
+			<ProjectVersion>14.6</ProjectVersion>
+			<MainSource>Defectoscope.cpp</MainSource>
+			<Base>True</Base>
+			<Config Condition="'$(Config)'==''">Debug</Config>
+			<AppType>Application</AppType>
+			<FrameworkType>VCL</FrameworkType>
+			<Platform Condition="'$(Platform)'==''">Win32</Platform>
+			<TargetedPlatforms>1</TargetedPlatforms>
+			<Platform>Win32</Platform>
+		</PropertyGroup>
+		<PropertyGroup Condition="'$(Config)'=='Base' or '$(Base)'!=''">
+			<Base>true</Base>
+		</PropertyGroup>
+		<PropertyGroup Condition="'$(Config)'=='Debug' or '$(Cfg_1)'!=''">
+			<Cfg_1>true</Cfg_1>
+			<CfgParent>Base</CfgParent>
+			<Base>true</Base>
+		</PropertyGroup>
+		<PropertyGroup Condition="'$(Platform)'=='Win32' and '$(Cfg_1)'=='true' or '$(Cfg_1_Win32)'!=''">
+			<Cfg_1_Win32>true</Cfg_1_Win32>
+			<CfgParent>Cfg_1</CfgParent>
+			<Cfg_1>true</Cfg_1>
+			<Base>true</Base>
+		</PropertyGroup>
+		<PropertyGroup Condition="'$(Config)'=='Release' or '$(Cfg_2)'!=''">
+			<Cfg_2>true</Cfg_2>
+			<CfgParent>Base</CfgParent>
+			<Base>true</Base>
+		</PropertyGroup>
+		<PropertyGroup Condition="'$(Platform)'=='Win32' and '$(Cfg_2)'=='true' or '$(Cfg_2_Win32)'!=''">
+			<Cfg_2_Win32>true</Cfg_2_Win32>
+			<CfgParent>Cfg_2</CfgParent>
+			<Cfg_2>true</Cfg_2>
+			<Base>true</Base>
+		</PropertyGroup>
+		<PropertyGroup Condition="'$(Base)'!=''">
+			<VerInfo_Keys>CompanyName=;FileDescription=;FileVersion=1.0.0.0;InternalName=;LegalCopyright=;LegalTrademarks=;OriginalFilename=;ProductName=;ProductVersion=1.0.0.0;Comments=</VerInfo_Keys>
+			<DCC_Namespace>Vcl;Vcl.Imaging;Vcl.Touch;Vcl.Samples;Vcl.Shell;System;Xml;Data;Datasnap;Web;Soap;$(DCC_Namespace)</DCC_Namespace>
+			<VerInfo_Locale>1049</VerInfo_Locale>
+			<ILINK_LibraryPath>A1730\;..\Башкирия\Internet DefOnline\;MitCOME\;slycomm\;$(ILINK_LibraryPath)</ILINK_LibraryPath>
+			<IncludePath>A1730\;..\Башкирия\Internet DefOnline\;MitCOME\;slycomm\;$(IncludePath)</IncludePath>
+			<LinkPackageStatics>rtl.lib;vcl.lib;Tee.lib;vclimg.lib;dbrtl.lib;adortl.lib;vclactnband.lib;vclx.lib;vcldb.lib;bcbsmp.lib;inet.lib;dsnap.lib;dsnapcon.lib;Comm.lib</LinkPackageStatics>
+			<OutputExt>exe</OutputExt>
+			<PackageImports>rtl.bpi;vcl.bpi;bcbie.bpi;xmlrtl.bpi;vclactnband.bpi;vclx.bpi;bcbsmp.bpi;VclSmp.bpi;vclimg.bpi;svnui.bpi;svn.bpi;bdertl.bpi;TeeUI.bpi;TeeDB.bpi;Tee.bpi;vcldb.bpi;dbrtl.bpi;vcldbx.bpi;vcltouch.bpi;dsnap.bpi;dsnapcon.bpi;vclib.bpi;ibxpress.bpi;adortl.bpi;IndyCore.bpi;IndySystem.bpi;IndyProtocols.bpi;inet.bpi;intrawebdb_110_150.bpi;Intraweb_110_150.bpi;vclie.bpi;websnap.bpi;webdsnap.bpi;inetdb.bpi;inetdbbde.bpi;inetdbxpress.bpi;soaprtl.bpi;vclribbon.bpi;dbexpress.bpi;DbxCommonDriver.bpi;DataSnapIndy10ServerTransport.bpi;DataSnapProviderClient.bpi;DbxClientDriver.bpi;DataSnapClient.bpi;dbxcds.bpi;DataSnapServer.bpi;AzureCloud.bpi;DBXInterBaseDriver.bpi;DBXMySQLDriver.bpi;DBXFirebirdDriver.bpi;DBXSybaseASEDriver.bpi;DBXSybaseASADriver.bpi;DBXOracleDriver.bpi;DBXMSSQLDriver.bpi;DBXInformixDriver.bpi;DBXDb2Driver.bpi;CodeSiteExpressVcl.bpi;Comm.bpi;$(PackageImports).bpi</PackageImports>
+			<Multithreaded>true</Multithreaded>
+			<_TCHARMapping>wchar_t</_TCHARMapping>
+			<AllPackageLibs>rtl.lib;vcl.lib;Tee.lib;vclimg.lib;dbrtl.lib;adortl.lib;vclactnband.lib;vclx.lib;vcldb.lib;bcbsmp.lib;inet.lib;dsnap.lib;dsnapcon.lib;Comm.lib</AllPackageLibs>
+			<ProjectType>CppVCLApplication</ProjectType>
+			<DCC_CBuilderOutput>JPHNE</DCC_CBuilderOutput>
+			<DynamicRTL>true</DynamicRTL>
+			<IntermediateOutputDir>.\$(Config)\$(Platform)</IntermediateOutputDir>
+			<FinalOutputDir>.\$(Config)\$(Platform)</FinalOutputDir>
+			<BCC_wpar>false</BCC_wpar>
+			<BCC_OptimizeForSpeed>true</BCC_OptimizeForSpeed>
+			<BCC_ExtendedErrorInfo>true</BCC_ExtendedErrorInfo>
+			<ILINK_TranslatedLibraryPath>$(BDSLIB)\$(PLATFORM)\release\$(LANGDIR);$(ILINK_TranslatedLibraryPath)</ILINK_TranslatedLibraryPath>
+		</PropertyGroup>
+		<PropertyGroup Condition="'$(Cfg_1)'!=''">
+			<IncludePath>C:\Program Files\L-Card\lpcie\include;$(IncludePath)</IncludePath>
+			<BRCC_IncludePath>(CG_BOOST_ROOT)\boost\tr1\tr1;$(BRCC_IncludePath)</BRCC_IncludePath>
+			<BCC_PCHUsage>None</BCC_PCHUsage>
+			<BCC_SmartPCHCache>false</BCC_SmartPCHCache>
+			<ILINK_SelectedWarnings>false</ILINK_SelectedWarnings>
+			<ILINK_AllWarnings>true</ILINK_AllWarnings>
+			<ILINK_LibraryPath>C:\Program Files\L-Card\lpcie\lib\borland;$(ILINK_LibraryPath)</ILINK_LibraryPath>
+			<BCC_MonitorGlobalAndStackData>true</BCC_MonitorGlobalAndStackData>
+			<BCC_InlineFunctionExpansion>false</BCC_InlineFunctionExpansion>
+			<BCC_MonitorThis>true</BCC_MonitorThis>
+			<BCC_MonitorInlinePtrAccess>true</BCC_MonitorInlinePtrAccess>
+			<BCC_wsig>true</BCC_wsig>
+			<BCC_wstl>true</BCC_wstl>
+			<BCC_wpar>true</BCC_wpar>
+			<BCC_wamb>true</BCC_wamb>
+			<BCC_wnod>true</BCC_wnod>
+			<DynamicRTL>false</DynamicRTL>
+			<BCC_OptimizeForSpeed>false</BCC_OptimizeForSpeed>
+			<BCC_DisableOptimizations>true</BCC_DisableOptimizations>
+			<DCC_Optimize>false</DCC_Optimize>
+			<DCC_DebugInfoInExe>true</DCC_DebugInfoInExe>
+			<BCC_UseRegisterVariables>None</BCC_UseRegisterVariables>
+			<DCC_Define>DEBUG</DCC_Define>
+			<BCC_DebugLineNumbers>true</BCC_DebugLineNumbers>
+			<TASM_DisplaySourceLines>true</TASM_DisplaySourceLines>
+			<BCC_StackFrames>true</BCC_StackFrames>
+			<ILINK_FullDebugInfo>true</ILINK_FullDebugInfo>
+			<TASM_Debugging>Full</TASM_Debugging>
+			<BCC_SourceDebuggingOn>true</BCC_SourceDebuggingOn>
+			<ILINK_TranslatedLibraryPath>$(BDSLIB)\$(PLATFORM)\debug\$(LANGDIR);$(ILINK_TranslatedLibraryPath)</ILINK_TranslatedLibraryPath>
+		</PropertyGroup>
+		<PropertyGroup Condition="'$(Cfg_1_Win32)'!=''">
+			<BCC_OutputDir>C:\Project\Eagle DefOnline\Debug\Win32\</BCC_OutputDir>
+			<BCC_wpar>false</BCC_wpar>
+			<BCC_wiip>false</BCC_wiip>
+			<IncludePath>DSPFilters\include;$(IncludePath)</IncludePath>
+		</PropertyGroup>
+		<PropertyGroup Condition="'$(Cfg_2)'!=''">
+			<IncludePath>C:\Program Files\L-Card\lpcie\include;DSPFilters\include;$(IncludePath)</IncludePath>
+			<DynamicRTL>false</DynamicRTL>
+			<ILINK_SelectedWarnings>false</ILINK_SelectedWarnings>
+			<BCC_SelectedWarnings>false</BCC_SelectedWarnings>
+			<ILINK_AllWarnings>true</ILINK_AllWarnings>
+			<BCC_AllWarnings>true</BCC_AllWarnings>
+			<TASM_wicg>true</TASM_wicg>
+			<ILINK_LibraryPath>C:\Program Files\Advantech\Adsapi\Lib;C:\Program Files\L-Card\lpcie\lib\borland;$(ILINK_LibraryPath)</ILINK_LibraryPath>
+			<TASM_Debugging>None</TASM_Debugging>
+		</PropertyGroup>
+		<PropertyGroup Condition="'$(Cfg_2_Win32)'!=''">
+			<IncludePath>c:\Program Files\L-Card\lpcie\include\;DspFilters\include\;$(IncludePath)</IncludePath>
+		</PropertyGroup>
+		<ItemGroup>
+			<CppCompile Include="A1730\A1730.cpp">
+				<DependentOn>A1730\A1730.h</DependentOn>
+				<BuildOrder>51</BuildOrder>
+			</CppCompile>
+			<None Include="A1730\A1730_old.cpp">
+				<Exclude>True</Exclude>
+				<DependentOn>A1730\A1730_old.h</DependentOn>
+				<BuildOrder>47</BuildOrder>
+			</None>
+			<CppCompile Include="A1730\Front.cpp">
+				<DependentOn>A1730\Front.h</DependentOn>
+				<BuildOrder>52</BuildOrder>
+			</CppCompile>
+			<CppCompile Include="A1730\Latch.cpp">
+				<DependentOn>A1730\Latch.h</DependentOn>
+				<BuildOrder>46</BuildOrder>
+			</CppCompile>
+			<CppCompile Include="A1730\Signal.cpp">
+				<DependentOn>A1730\Signal.h</DependentOn>
+				<BuildOrder>48</BuildOrder>
+			</CppCompile>
+			<CppCompile Include="A1730\SignalList.cpp">
+				<DependentOn>A1730\SignalList.h</DependentOn>
+				<BuildOrder>49</BuildOrder>
+			</CppCompile>
+			<CppCompile Include="A1730\SignalListDef.cpp">
+				<DependentOn>A1730\SignalListDef.h</DependentOn>
+				<BuildOrder>50</BuildOrder>
+			</CppCompile>
+			<CppCompile Include="A1730\uFRSigPanel.cpp">
+				<Form>FRSigPanel</Form>
+				<DesignClass>TFrame</DesignClass>
+				<DependentOn>A1730\uFRSigPanel.h</DependentOn>
+				<BuildOrder>53</BuildOrder>
+			</CppCompile>
+			<CppCompile Include="A1730\uFSignalsState.cpp">
+				<Form>FSignalsState</Form>
+				<DependentOn>A1730\uFSignalsState.h</DependentOn>
+				<BuildOrder>52</BuildOrder>
+			</CppCompile>
+			<CppCompile Include="ABOUT_NTC_NK_URAN.cpp">
+				<Form>AboutBox1</Form>
+				<DependentOn>ABOUT_NTC_NK_URAN.h</DependentOn>
+				<BuildOrder>35</BuildOrder>
+			</CppCompile>
+			<CppCompile Include="ADCSettings.cpp">
+				<Form>ADCSettForm</Form>
+				<DependentOn>ADCSettings.h</DependentOn>
+				<BuildOrder>25</BuildOrder>
+			</CppCompile>
+			<CppCompile Include="clustering.cpp">
+				<DependentOn>clustering.h</DependentOn>
+				<BuildOrder>29</BuildOrder>
+			</CppCompile>
+			<CppCompile Include="ColorSettings.cpp">
+				<Form>FormColor</Form>
+				<DependentOn>ColorSettings.h</DependentOn>
+				<BuildOrder>22</BuildOrder>
+			</CppCompile>
+			<CppCompile Include="ComPort.cpp">
+				<DependentOn>ComPort.h</DependentOn>
+				<BuildOrder>30</BuildOrder>
+			</CppCompile>
+			<CppCompile Include="DataModule.cpp">
+				<Form>DM</Form>
+				<DesignClass>TDataModule</DesignClass>
+				<DependentOn>DataModule.h</DependentOn>
+				<BuildOrder>10</BuildOrder>
+			</CppCompile>
+			<CppCompile Include="Defectoscope.cpp">
+				<BuildOrder>0</BuildOrder>
+			</CppCompile>
+			<ResFiles Include="Defectoscope.res">
+				<BuildOrder>1</BuildOrder>
+			</ResFiles>
+			<CppCompile Include="Filters.cpp">
+				<DependentOn>Filters.h</DependentOn>
+				<BuildOrder>35</BuildOrder>
+			</CppCompile>
+			<CppCompile Include="Global.cpp">
+				<DependentOn>Global.h</DependentOn>
+				<BuildOrder>7</BuildOrder>
+			</CppCompile>
+			<CppCompile Include="GraphicsCenters.cpp">
+				<Form>GraphicCentersForm</Form>
+				<DependentOn>GraphicsCenters.h</DependentOn>
+				<BuildOrder>34</BuildOrder>
+			</CppCompile>
+			<CppCompile Include="Inverter.cpp">
+				<DependentOn>Inverter.h</DependentOn>
+				<BuildOrder>37</BuildOrder>
+			</CppCompile>
+			<CppCompile Include="LCARD502.cpp">
+				<DependentOn>LCARD502.h</DependentOn>
+				<BuildOrder>36</BuildOrder>
+			</CppCompile>
+			<CppCompile Include="Main.cpp">
+				<Form>MainForm</Form>
+				<DependentOn>Main.h</DependentOn>
+				<BuildOrder>2</BuildOrder>
+			</CppCompile>
+			<CppCompile Include="Manage.cpp">
+				<Form>ManageForm</Form>
+				<DependentOn>Manage.h</DependentOn>
+				<BuildOrder>9</BuildOrder>
+			</CppCompile>
+			<CppCompile Include="MitCOME\uCCOMPort.cpp">
+				<DependentOn>MitCOME\uCCOMPort.h</DependentOn>
+				<BuildOrder>38</BuildOrder>
+			</CppCompile>
+			<CppCompile Include="MitCOME\uCExchange.cpp">
+				<DependentOn>MitCOME\uCExchange.h</DependentOn>
+				<BuildOrder>39</BuildOrder>
+			</CppCompile>
+			<CppCompile Include="MitCOME\uCInv.cpp">
+				<DependentOn>MitCOME\uCInv.h</DependentOn>
+				<BuildOrder>40</BuildOrder>
+			</CppCompile>
+			<CppCompile Include="MitCOME\uCReply.cpp">
+				<DependentOn>MitCOME\uCReply.h</DependentOn>
+				<BuildOrder>41</BuildOrder>
+			</CppCompile>
+			<CppCompile Include="MitCOME\uCRequest.cpp">
+				<DependentOn>MitCOME\uCRequest.h</DependentOn>
+				<BuildOrder>42</BuildOrder>
+			</CppCompile>
+			<CppCompile Include="MitCOME\uCRListT.cpp">
+				<DependentOn>MitCOME\uCRListT.h</DependentOn>
+				<BuildOrder>43</BuildOrder>
+			</CppCompile>
+			<CppCompile Include="Protocol.cpp">
+				<Form>Pr</Form>
+				<DependentOn>Protocol.h</DependentOn>
+				<BuildOrder>43</BuildOrder>
+			</CppCompile>
+			<CppCompile Include="Reports.cpp">
+				<DependentOn>Reports.h</DependentOn>
+				<BuildOrder>23</BuildOrder>
+			</CppCompile>
+			<CppCompile Include="ReportsView.cpp">
+				<Form>FormReport</Form>
+				<DependentOn>ReportsView.h</DependentOn>
+				<BuildOrder>24</BuildOrder>
+			</CppCompile>
+			<CppCompile Include="Result.cpp">
+				<DependentOn>Result.h</DependentOn>
+				<BuildOrder>6</BuildOrder>
+			</CppCompile>
+			<CppCompile Include="Settings.cpp">
+				<Form>SettingsForm</Form>
+				<DependentOn>Settings.h</DependentOn>
+				<BuildOrder>8</BuildOrder>
+			</CppCompile>
+			<CppCompile Include="SMS.cpp">
+				<DependentOn>SMS.h</DependentOn>
+				<BuildOrder>32</BuildOrder>
+			</CppCompile>
+			<CppCompile Include="Solenoid.cpp">
+				<DependentOn>Solenoid.h</DependentOn>
+				<BuildOrder>45</BuildOrder>
+			</CppCompile>
+			<CppCompile Include="SolidGroup.cpp">
+				<Form>SolidGroupForm</Form>
+				<DependentOn>SolidGroup.h</DependentOn>
+				<BuildOrder>49</BuildOrder>
+			</CppCompile>
+			<CppCompile Include="SolidGroupGraphics.cpp">
+				<Form>SGGraphForm</Form>
+				<DependentOn>SolidGroupGraphics.h</DependentOn>
+				<BuildOrder>41</BuildOrder>
+			</CppCompile>
+			<CppCompile Include="SolidGroupTest.cpp">
+				<Form>SGForm</Form>
+				<DependentOn>SolidGroupTest.h</DependentOn>
+				<BuildOrder>29</BuildOrder>
+			</CppCompile>
+			<CppCompile Include="Spectroscope.cpp">
+				<DependentOn>Spectroscope.h</DependentOn>
+				<BuildOrder>48</BuildOrder>
+			</CppCompile>
+			<CppCompile Include="SpectroSettings.cpp">
+				<Form>SpectroSettingForm</Form>
+				<DependentOn>SpectroSettings.h</DependentOn>
+				<BuildOrder>49</BuildOrder>
+			</CppCompile>
+			<CppCompile Include="Statistics.cpp">
+				<DependentOn>Statistics.h</DependentOn>
+				<BuildOrder>20</BuildOrder>
+			</CppCompile>
+			<CppCompile Include="ThreadOnLine.cpp">
+				<DependentOn>ThreadOnLine.h</DependentOn>
+				<BuildOrder>28</BuildOrder>
+			</CppCompile>
+			<CppCompile Include="uFASMTest.cpp">
+				<Form>FASMTest</Form>
+				<DependentOn>uFASMTest.h</DependentOn>
+				<BuildOrder>42</BuildOrder>
+			</CppCompile>
+			<CppCompile Include="uFRHistory.cpp">
+				<Form>FRHistory</Form>
+				<DesignClass>TFrame</DesignClass>
+				<DependentOn>uFRHistory.h</DependentOn>
+				<BuildOrder>40</BuildOrder>
+			</CppCompile>
+			<CppCompile Include="uFRTubeHistory.cpp">
+				<Form>FRTubeHistory</Form>
+				<DesignClass>TFrame</DesignClass>
+				<DependentOn>uFRTubeHistory.h</DependentOn>
+				<BuildOrder>41</BuildOrder>
+			</CppCompile>
+			<CppCompile Include="uFunctions.cpp">
+				<DependentOn>uFunctions.h</DependentOn>
+				<BuildOrder>44</BuildOrder>
+			</CppCompile>
+			<CppCompile Include="View.cpp">
+				<Form>ViewForm</Form>
+				<DependentOn>View.h</DependentOn>
+				<BuildOrder>5</BuildOrder>
+			</CppCompile>
+			<CppCompile Include="ViewEtalons.cpp">
+				<Form>FormViewEtalons</Form>
+				<DependentOn>ViewEtalons.h</DependentOn>
+				<BuildOrder>18</BuildOrder>
+			</CppCompile>
+			<FormResources Include="ReportsView.dfm"/>
+			<FormResources Include="Settings.dfm"/>
+			<FormResources Include="Protocol.dfm"/>
+			<FormResources Include="SolidGroup.dfm"/>
+			<FormResources Include="uFRTubeHistory.dfm"/>
+			<FormResources Include="uFRHistory.dfm"/>
+			<FormResources Include="uFASMTest.dfm"/>
+			<FormResources Include="ViewEtalons.dfm"/>
+			<FormResources Include="View.dfm"/>
+			<FormResources Include="SolidGroupTest.dfm"/>
+			<FormResources Include="SolidGroupGraphics.dfm"/>
+			<FormResources Include="SpectroSettings.dfm"/>
+			<FormResources Include="A1730\uFSignalsState.dfm"/>
+			<FormResources Include="A1730\uFRSigPanel.dfm"/>
+			<FormResources Include="ADCSettings.dfm"/>
+			<FormResources Include="ABOUT_NTC_NK_URAN.dfm"/>
+			<FormResources Include="ColorSettings.dfm"/>
+			<FormResources Include="GraphicsCenters.dfm"/>
+			<FormResources Include="Manage.dfm"/>
+			<FormResources Include="Main.dfm"/>
+			<FormResources Include="DataModule.dfm"/>
+			<BuildConfiguration Include="Release">
+				<Key>Cfg_2</Key>
+				<CfgParent>Base</CfgParent>
+			</BuildConfiguration>
+			<BuildConfiguration Include="Base">
+				<Key>Base</Key>
+			</BuildConfiguration>
+			<BuildConfiguration Include="Debug">
+				<Key>Cfg_1</Key>
+				<CfgParent>Base</CfgParent>
+			</BuildConfiguration>
+		</ItemGroup>
+		<Import Condition="Exists('$(BDS)\Bin\CodeGear.Cpp.Targets')" Project="$(BDS)\Bin\CodeGear.Cpp.Targets"/>
+		<Import Condition="Exists('$(APPDATA)\Embarcadero\$(BDSAPPDATABASEDIR)\8.0\UserTools.proj')" Project="$(APPDATA)\Embarcadero\$(BDSAPPDATABASEDIR)\8.0\UserTools.proj"/>
+		<ProjectExtensions>
+			<Borland.Personality>CPlusPlusBuilder.Personality.12</Borland.Personality>
+			<Borland.ProjectType>CppVCLApplication</Borland.ProjectType>
+			<BorlandProject>
+				<CPlusPlusBuilder.Personality>
+					<VersionInfo>
+						<VersionInfo Name="IncludeVerInfo">False</VersionInfo>
+						<VersionInfo Name="AutoIncBuild">False</VersionInfo>
+						<VersionInfo Name="MajorVer">1</VersionInfo>
+						<VersionInfo Name="MinorVer">0</VersionInfo>
+						<VersionInfo Name="Release">0</VersionInfo>
+						<VersionInfo Name="Build">0</VersionInfo>
+						<VersionInfo Name="Debug">False</VersionInfo>
+						<VersionInfo Name="PreRelease">False</VersionInfo>
+						<VersionInfo Name="Special">False</VersionInfo>
+						<VersionInfo Name="Private">False</VersionInfo>
+						<VersionInfo Name="DLL">False</VersionInfo>
+						<VersionInfo Name="Locale">1049</VersionInfo>
+						<VersionInfo Name="CodePage">1251</VersionInfo>
+					</VersionInfo>
+					<VersionInfoKeys>
+						<VersionInfoKeys Name="CompanyName"/>
+						<VersionInfoKeys Name="FileDescription"/>
+						<VersionInfoKeys Name="FileVersion">1.0.0.0</VersionInfoKeys>
+						<VersionInfoKeys Name="InternalName"/>
+						<VersionInfoKeys Name="LegalCopyright"/>
+						<VersionInfoKeys Name="LegalTrademarks"/>
+						<VersionInfoKeys Name="OriginalFilename"/>
+						<VersionInfoKeys Name="ProductName"/>
+						<VersionInfoKeys Name="ProductVersion">1.0.0.0</VersionInfoKeys>
+						<VersionInfoKeys Name="Comments"/>
+					</VersionInfoKeys>
+					<ProjectProperties>
+						<ProjectProperties Name="AutoShowDeps">False</ProjectProperties>
+						<ProjectProperties Name="ManagePaths">True</ProjectProperties>
+						<ProjectProperties Name="VerifyPackages">True</ProjectProperties>
+					</ProjectProperties>
+					<Source>
+						<Source Name="MainSource">Defectoscope.cpp</Source>
+					</Source>
+					<Excluded_Packages>
+						<Excluded_Packages Name="$(BDSBIN)\bcboffice2k150.bpl">Embarcadero C++Builder Office 2000 Servers Package</Excluded_Packages>
+						<Excluded_Packages Name="$(BDSBIN)\bcbofficexp150.bpl">Embarcadero C++Builder Office XP Servers Package</Excluded_Packages>
+					</Excluded_Packages>
+				</CPlusPlusBuilder.Personality>
+				<Platforms>
+					<Platform value="Win64">False</Platform>
+					<Platform value="Win32">True</Platform>
+				</Platforms>
+				<ModelSupport>False</ModelSupport>
+			</BorlandProject>
+			<ProjectFileVersion>12</ProjectFileVersion>
+		</ProjectExtensions>
+	</Project>

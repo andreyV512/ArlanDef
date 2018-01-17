@@ -1,0 +1,9 @@
+*.obj
+.svn/
+Debug_Build/
+Release_Build/
+slycomm/Comm.bpl
+Settings/IO_Management.exe
+__history/
+Debug/
+Protocols/

@@ -1,0 +1,30 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<BorlandProject>
+	<Transactions>
+    <Transaction>1899.12.30 00:00:00.000.015,D:\RAG\Finding\Internet DefOnline\Unit1.dfm=D:\RAG\Finding\Internet DefOnline\uFRHistory.dfm</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.015,D:\RAG\Finding\Internet DefOnline\Unit1.h=D:\RAG\Finding\Internet DefOnline\uFRHistory.h</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.015,C:\SOFT\Арлан\Def\Internet DefOnline\A1730\FSignalsState.h=C:\SOFT\Арлан\Def\Internet DefOnline\A1730\SignalsState.h</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.312,=D:\Defectoscope\SpectroscopeTest.cpp</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.218,D:\RAG\Finding\Internet DefOnline\uFRTubeHistory.h=D:\RAG\Finding\Internet DefOnline\Unit1.h</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.203,D:\RAG\Finding\Internet DefOnline\uFASMTest.h=D:\RAG\Finding\Internet DefOnline\Unit2.h</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.038,C:\SOFT\Арлан\Def\Internet DefOnline\A1730\SignalList.h=c:\SOFT\Арлан\Def\Internet DefOnline\Unit1.h</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.015,C:\SOFT\Арлан\Def\Internet DefOnline\A1730\FSignalsState.dfm=C:\SOFT\Арлан\Def\Internet DefOnline\A1730\SignalsState.dfm</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.609,c:\SOFT\Арлан\Def\Internet DefOnline\A1730\FSignalsState.dfm=c:\SOFT\Арлан\Def\Internet DefOnline\A1730\SignalsState.dfm</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.609,c:\SOFT\Арлан\Def\Internet DefOnline\A1730\FSignalsState.h=c:\SOFT\Арлан\Def\Internet DefOnline\A1730\SignalsState.h</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.406,c:\SOFT\Арлан\Def\Internet DefOnline\A1730\A1730.h=c:\SOFT\Арлан\Def\Internet DefOnline\A1730\A1730_old.h</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.531,c:\SOFT\Башкирия\Internet DefOnline\Unit1.h=C:\SOFT\Башкирия\Internet DefOnline\Advantech1730_virtual.h</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.781,D:\Defectoscope\SpectroscopeTest.cpp=</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.554,c:\SOFT\Арлан\Def\Internet DefOnline\Unit1.h=C:\SOFT\Арлан\Def\Internet DefOnline\A1730\SignalListDef.h</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.531,c:\SOFT\Арлан\Def\Internet DefOnline\Unit1.h=C:\SOFT\Арлан\Def\Internet DefOnline\Solenoid.h</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.812,C:\SOFT\Арлан\Def\Internet DefOnline\Protocol1.dfm=C:\SOFT\Арлан\Def\Internet DefOnline\Protocol.dfm</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.296,c:\SOFT\Арлан\Def\Internet DefOnline\A1730\SignalsState.h=c:\SOFT\Арлан\Def\Internet DefOnline\A1730\uFSignalsState.h</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.156,c:\SOFT\Арлан\Def\Internet DefOnline\Unit1.h=C:\SOFT\Арлан\Def\Internet DefOnline\A1730\A1730.h</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.156,c:\SOFT\Арлан\Def\Internet DefOnline\Unit1.h=C:\SOFT\Арлан\Def\Internet DefOnline\A1730\Front.h</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.296,c:\SOFT\Арлан\Def\Internet DefOnline\A1730\SignalsState.dfm=c:\SOFT\Арлан\Def\Internet DefOnline\A1730\uFSignalsState.dfm</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.203,D:\RAG\Finding\Internet DefOnline\uFASMTest.dfm=D:\RAG\Finding\Internet DefOnline\Unit2.dfm</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.218,D:\RAG\Finding\Internet DefOnline\uFRTubeHistory.dfm=D:\RAG\Finding\Internet DefOnline\Unit1.dfm</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.046,D:\RAG\DefOnLine\SolidGroup1.h=D:\RAG\DefOnLine\SolidGroup.h</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.812,C:\SOFT\Арлан\Def\Internet DefOnline\Protocol1.h=C:\SOFT\Арлан\Def\Internet DefOnline\Protocol.h</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.046,D:\RAG\DefOnLine\SolidGroup1.dfm=D:\RAG\DefOnLine\SolidGroup.dfm</Transaction>
+  </Transactions>
+</BorlandProject>

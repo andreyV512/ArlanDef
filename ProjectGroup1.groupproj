@@ -1,0 +1,48 @@
+﻿	<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+		<PropertyGroup>
+			<ProjectGuid>{A05D2784-12A6-4E20-B3A9-9A5A9B928684}</ProjectGuid>
+		</PropertyGroup>
+		<ItemGroup>
+			<Projects Include="MyProject.cbproj">
+				<Dependencies/>
+			</Projects>
+			<Projects Include="\\Mainserver\Archive\Soft\Defectoskope_Backup\Defectoscope 12.07.2011\Defectoskope.dproj">
+				<Dependencies/>
+			</Projects>
+		</ItemGroup>
+		<ProjectExtensions>
+			<Borland.Personality>Default.Personality.12</Borland.Personality>
+			<Borland.ProjectType/>
+			<BorlandProject>
+				<Default.Personality/>
+			</BorlandProject>
+		</ProjectExtensions>
+		<Target Name="MyProject">
+			<MSBuild Projects="MyProject.cbproj"/>
+		</Target>
+		<Target Name="MyProject:Clean">
+			<MSBuild Projects="MyProject.cbproj" Targets="Clean"/>
+		</Target>
+		<Target Name="MyProject:Make">
+			<MSBuild Projects="MyProject.cbproj" Targets="Make"/>
+		</Target>
+		<Target Name="Defectoskope">
+			<MSBuild Projects="\\Mainserver\Archive\Soft\Defectoskope_Backup\Defectoscope 12.07.2011\Defectoskope.dproj"/>
+		</Target>
+		<Target Name="Defectoskope:Clean">
+			<MSBuild Projects="\\Mainserver\Archive\Soft\Defectoskope_Backup\Defectoscope 12.07.2011\Defectoskope.dproj" Targets="Clean"/>
+		</Target>
+		<Target Name="Defectoskope:Make">
+			<MSBuild Projects="\\Mainserver\Archive\Soft\Defectoskope_Backup\Defectoscope 12.07.2011\Defectoskope.dproj" Targets="Make"/>
+		</Target>
+		<Target Name="Build">
+			<CallTarget Targets="MyProject;Defectoskope"/>
+		</Target>
+		<Target Name="Clean">
+			<CallTarget Targets="MyProject:Clean;Defectoskope:Clean"/>
+		</Target>
+		<Target Name="Make">
+			<CallTarget Targets="MyProject:Make;Defectoskope:Make"/>
+		</Target>
+		<Import Condition="Exists('$(BDS)\Bin\CodeGear.Group.Targets')" Project="$(BDS)\Bin\CodeGear.Group.Targets"/>
+	</Project>
