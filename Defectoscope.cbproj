@@ -40,8 +40,8 @@
 			<VerInfo_Keys>CompanyName=;FileDescription=;FileVersion=1.0.0.0;InternalName=;LegalCopyright=;LegalTrademarks=;OriginalFilename=;ProductName=;ProductVersion=1.0.0.0;Comments=</VerInfo_Keys>
 			<DCC_Namespace>Vcl;Vcl.Imaging;Vcl.Touch;Vcl.Samples;Vcl.Shell;System;Xml;Data;Datasnap;Web;Soap;$(DCC_Namespace)</DCC_Namespace>
 			<VerInfo_Locale>1049</VerInfo_Locale>
-			<ILINK_LibraryPath>A1730\;..\Башкирия\Internet DefOnline\;MitCOME\;slycomm\;$(ILINK_LibraryPath)</ILINK_LibraryPath>
-			<IncludePath>A1730\;..\Башкирия\Internet DefOnline\;MitCOME\;slycomm\;$(IncludePath)</IncludePath>
+			<ILINK_LibraryPath>sg\;..\..\Kandry1310\Defectoscope\1730\inc\;A1730\;..\Башкирия\Internet DefOnline\;MitCOME\;slycomm\;$(ILINK_LibraryPath)</ILINK_LibraryPath>
+			<IncludePath>sg\;..\..\Kandry1310\Defectoscope\1730\inc\;A1730\;..\Башкирия\Internet DefOnline\;MitCOME\;slycomm\;$(IncludePath)</IncludePath>
 			<LinkPackageStatics>rtl.lib;vcl.lib;Tee.lib;vclimg.lib;dbrtl.lib;adortl.lib;vclactnband.lib;vclx.lib;vcldb.lib;bcbsmp.lib;inet.lib;dsnap.lib;dsnapcon.lib;Comm.lib</LinkPackageStatics>
 			<OutputExt>exe</OutputExt>
 			<PackageImports>rtl.bpi;vcl.bpi;bcbie.bpi;xmlrtl.bpi;vclactnband.bpi;vclx.bpi;bcbsmp.bpi;VclSmp.bpi;vclimg.bpi;svnui.bpi;svn.bpi;bdertl.bpi;TeeUI.bpi;TeeDB.bpi;Tee.bpi;vcldb.bpi;dbrtl.bpi;vcldbx.bpi;vcltouch.bpi;dsnap.bpi;dsnapcon.bpi;vclib.bpi;ibxpress.bpi;adortl.bpi;IndyCore.bpi;IndySystem.bpi;IndyProtocols.bpi;inet.bpi;intrawebdb_110_150.bpi;Intraweb_110_150.bpi;vclie.bpi;websnap.bpi;webdsnap.bpi;inetdb.bpi;inetdbbde.bpi;inetdbxpress.bpi;soaprtl.bpi;vclribbon.bpi;dbexpress.bpi;DbxCommonDriver.bpi;DataSnapIndy10ServerTransport.bpi;DataSnapProviderClient.bpi;DbxClientDriver.bpi;DataSnapClient.bpi;dbxcds.bpi;DataSnapServer.bpi;AzureCloud.bpi;DBXInterBaseDriver.bpi;DBXMySQLDriver.bpi;DBXFirebirdDriver.bpi;DBXSybaseASEDriver.bpi;DBXSybaseASADriver.bpi;DBXOracleDriver.bpi;DBXMSSQLDriver.bpi;DBXInformixDriver.bpi;DBXDb2Driver.bpi;CodeSiteExpressVcl.bpi;Comm.bpi;$(PackageImports).bpi</PackageImports>
@@ -91,6 +91,7 @@
 			<ILINK_TranslatedLibraryPath>$(BDSLIB)\$(PLATFORM)\debug\$(LANGDIR);$(ILINK_TranslatedLibraryPath)</ILINK_TranslatedLibraryPath>
 		</PropertyGroup>
 		<PropertyGroup Condition="'$(Cfg_1_Win32)'!=''">
+			<BCC_Defines>_DEBUG;$(BCC_Defines)</BCC_Defines>
 			<BCC_OutputDir>C:\Project\Eagle DefOnline\Debug\Win32\</BCC_OutputDir>
 			<BCC_wpar>false</BCC_wpar>
 			<BCC_wiip>false</BCC_wiip>
@@ -264,6 +265,14 @@
 				<DependentOn>Settings.h</DependentOn>
 				<BuildOrder>8</BuildOrder>
 			</CppCompile>
+			<CppCompile Include="sg\InitSG.cpp">
+				<VirtualFolder>{ECA637DA-F4CF-4F77-BACB-EE2C00B0FFB2}</VirtualFolder>
+				<BuildOrder>51</BuildOrder>
+			</CppCompile>
+			<None Include="sg\InitSG.h">
+				<VirtualFolder>{ECA637DA-F4CF-4F77-BACB-EE2C00B0FFB2}</VirtualFolder>
+				<BuildOrder>52</BuildOrder>
+			</None>
 			<CppCompile Include="SMS.cpp">
 				<DependentOn>SMS.h</DependentOn>
 				<BuildOrder>32</BuildOrder>
@@ -335,26 +344,30 @@
 				<DependentOn>ViewEtalons.h</DependentOn>
 				<BuildOrder>18</BuildOrder>
 			</CppCompile>
-			<FormResources Include="ReportsView.dfm"/>
+			<None Include="..\..\Kandry1310\Defectoscope\1730\inc\BDaqCL.h">
+				<VirtualFolder>{1F342069-8ADD-424B-A13F-61814C97D9E6}</VirtualFolder>
+				<BuildOrder>50</BuildOrder>
+			</None>
 			<FormResources Include="Settings.dfm"/>
-			<FormResources Include="Protocol.dfm"/>
 			<FormResources Include="SolidGroup.dfm"/>
+			<FormResources Include="ReportsView.dfm"/>
+			<FormResources Include="Protocol.dfm"/>
 			<FormResources Include="uFRTubeHistory.dfm"/>
 			<FormResources Include="uFRHistory.dfm"/>
-			<FormResources Include="uFASMTest.dfm"/>
 			<FormResources Include="ViewEtalons.dfm"/>
 			<FormResources Include="View.dfm"/>
+			<FormResources Include="uFASMTest.dfm"/>
 			<FormResources Include="SolidGroupTest.dfm"/>
 			<FormResources Include="SolidGroupGraphics.dfm"/>
 			<FormResources Include="SpectroSettings.dfm"/>
+			<FormResources Include="ABOUT_NTC_NK_URAN.dfm"/>
 			<FormResources Include="A1730\uFSignalsState.dfm"/>
 			<FormResources Include="A1730\uFRSigPanel.dfm"/>
-			<FormResources Include="ADCSettings.dfm"/>
-			<FormResources Include="ABOUT_NTC_NK_URAN.dfm"/>
 			<FormResources Include="ColorSettings.dfm"/>
-			<FormResources Include="GraphicsCenters.dfm"/>
-			<FormResources Include="Manage.dfm"/>
+			<FormResources Include="ADCSettings.dfm"/>
 			<FormResources Include="Main.dfm"/>
+			<FormResources Include="Manage.dfm"/>
+			<FormResources Include="GraphicsCenters.dfm"/>
 			<FormResources Include="DataModule.dfm"/>
 			<BuildConfiguration Include="Release">
 				<Key>Cfg_2</Key>
@@ -414,6 +427,10 @@
 						<Excluded_Packages Name="$(BDSBIN)\bcboffice2k150.bpl">Embarcadero C++Builder Office 2000 Servers Package</Excluded_Packages>
 						<Excluded_Packages Name="$(BDSBIN)\bcbofficexp150.bpl">Embarcadero C++Builder Office XP Servers Package</Excluded_Packages>
 					</Excluded_Packages>
+					<VFOLDERS>
+						<VFOLDER name="1730" ID="{1F342069-8ADD-424B-A13F-61814C97D9E6}"/>
+						<VFOLDER name="sg" ID="{ECA637DA-F4CF-4F77-BACB-EE2C00B0FFB2}"/>
+					</VFOLDERS>
 				</CPlusPlusBuilder.Personality>
 				<Platforms>
 					<Platform value="Win64">False</Platform>

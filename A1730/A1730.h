@@ -2,7 +2,8 @@
 #ifndef A1730H
 #define A1730H
 #include <System.hpp>
-#include "c:/Advantech/BioDAQ/Inc/BDaqCL.h"
+//#include "c:/Advantech/BioDAQ/Inc/BDaqCL.h"
+#include "BDaqCL.h"
 using namespace Automation::BDaq;
 class A1730
 {

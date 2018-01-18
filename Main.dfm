@@ -1813,26 +1813,7 @@ object MainForm: TMainForm
     end
     object SolidGroup: TMenuItem
       Caption = #1043#1088#1091#1087#1087#1072' '#1087#1088#1086#1095#1085#1086#1089#1090#1080
-      object menuSGTest: TMenuItem
-        Caption = #1058#1077#1089#1090' '#1075#1088#1091#1087#1087#1099' '#1087#1088#1086#1095#1085#1086#1089#1090#1080
-        ShortCut = 16497
-        OnClick = menuSGTestClick
-      end
-      object menuGraphicsSG: TMenuItem
-        Caption = #1043#1088#1072#1092#1080#1082#1080' '#1043#1055
-        ShortCut = 16506
-        OnClick = menuGraphicsSGClick
-      end
-      object menuSolidGroup: TMenuItem
-        Caption = #1044#1086#1073#1072#1074#1080#1090#1100' '#1101#1090#1072#1083#1086#1085
-        ShortCut = 16499
-        OnClick = menuSolidGroupClick
-      end
-      object menuViewEtalons: TMenuItem
-        Caption = #1055#1088#1086#1089#1084#1086#1090#1088' '#1101#1090#1072#1083#1086#1085#1086#1074' '#1043#1055
-        ShortCut = 16498
-        OnClick = menuViewEtalonsClick
-      end
+      OnClick = SolidGroupClick
     end
     object menuHelp: TMenuItem
       Caption = #1055#1086#1084#1086#1097#1100

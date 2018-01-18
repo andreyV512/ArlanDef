@@ -51,6 +51,7 @@
 #include "ThreadOnLine.h"
 #include "Spectroscope.h"
 #include "SignalListDef.h"
+#include "InitSG.h"
 
 
 class ThreadOnLine;
@@ -85,15 +86,11 @@ __published:	// IDE-managed Components
 	TMenuItem *menuLoadTube;
 	TMenuItem *menuClearCharts;
 	TMenuItem *menuManagement;
-	TMenuItem *menuSolidGroup;
 	TMenuItem *menuTestAdvantech;
 	TMenuItem *menuHelp;
 	TMenuItem *menuF1;
 	TMenuItem *menuColors;
-	TMenuItem *menuViewEtalons;
-	TMenuItem *menuSGTest;
 	TMenuItem *menuTestASUConnection;
-	TMenuItem *menuGraphicsSG;
 	TGroupBox *gbCrossDef;
 	TGroupBox *gbLinearDef;
 	TGroupBox *gbThickness;
@@ -236,9 +233,10 @@ __published:	// IDE-managed Components
 	void __fastcall menuSpectroSettingsClick(TObject *Sender);
 	void __fastcall cbSpectrotestClick(TObject *Sender);
 	void __fastcall TimerThreadCompleteTimer(TObject *Sender);
+	void __fastcall SolidGroupClick(TObject *Sender);
 
 private:	// User declarations
-
+   ISG_DLL *sg;
 	// настройки типоразмеров
 	void LoadSettings(TObject *Sender);		// читает настройки из ini файла, заполняет едиты, устанавли пороги, мертвые зоны
 	TIniFile *ini;							// ини файл с настройками
@@ -280,7 +278,7 @@ public:		// User declarations
 	void ClearCharts(void);
 	void SendResultToASM(void);
 	// Спектроскоп
-	Spectroscope *spectroscope;
+  //	Spectroscope *spectroscope;
 	void NextTube(void);
 };
 //---------------------------------------------------------------------------

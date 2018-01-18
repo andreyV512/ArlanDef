@@ -16,6 +16,7 @@
 #include "global.h"
 #include "SpectroSettings.h"
 #include "Classes.hpp"
+#include "Math.h"
 
 // ---------------------------------------------------------------------------
 #pragma package(smart_init)
@@ -36,7 +37,7 @@ __fastcall TMainForm::TMainForm(TComponent* Owner) : TForm(Owner)
 	ini = new TIniFile(Globals::IniFileName);
 
 	MainForm->Tag = 0; // запуск произведен 1й раз очистка буфера не требуется
-	spectroscope = new Spectroscope();
+	//spectroscope = new Spectroscope();
 }
 
 // ---------------------------------------------------------------------------
@@ -74,6 +75,7 @@ void __fastcall TMainForm::FormCreate(TObject *Sender)
 	KeyPreview = true;
 
 	// Работа со спектроскопом
+	/*
 	if (ini->ReadBool("Spectroscope", "IsPresent", false))
 	{
 		cbSpectrotest->Checked = true;
@@ -87,6 +89,7 @@ void __fastcall TMainForm::FormCreate(TObject *Sender)
 			ini->WriteBool("Spectroscope", "IsPresent", false);
 		}
 	}
+	*/
 
 	Globals::current_typesize = ini->ReadString("Default", "TypeSize", "1");
 	IsSendResultToProtocol = ini->ReadBool("OtherSettings",
@@ -135,7 +138,7 @@ void __fastcall TMainForm::FormCreate(TObject *Sender)
 	sms->StartServer();
 
 	// установи настройки групп прочности
-//	SetSolidGroup(Sender); // Не нужно, так как LoadSettings установит сам
+   //	SetSolidGroup(Sender); // Не нужно, так как LoadSettings установит сам
 
 	// смотрим, какие модули работают по умолчанию (в последний раз)
 	this->cbLinear->Checked = ini->ReadBool("Default", "IsLinear", true);
@@ -163,11 +166,17 @@ void __fastcall TMainForm::FormCreate(TObject *Sender)
 		StatusBarBottom->Panels->Items[0]->Text = "ПЧ подключен";
 		StatusBarBottom->Refresh();
 	}
+	sg = InitSolid();
+	if(NULL == sg)
+	{
+		Application->MessageBoxW(L"Библиотека группы прочности не загружена",L"Ошибка",MB_OK+MB_ICONERROR);
+	}
 }
 // ---------------------------------------------------------------------------
 
 void __fastcall TMainForm::FormDestroy(TObject *Sender)
 {
+    DestroySolid(&sg);
 	DragAcceptFiles(Handle, false); // Запрещаем перетаскивание файлов
 
 	SLD->oLSOLPOW->Set(false);
@@ -191,7 +200,7 @@ void __fastcall TMainForm::FormDestroy(TObject *Sender)
 		0x00A); // наш идентификатор горячего ключа
 
 	Singleton::deleteInstance();
-	delete spectroscope;
+	//delete spectroscope;
 	ini->WriteBool("OtherSettings", "SignalsVisible", FSignalsState->Visible);
 	delete FSignalsState;
 	delete SLD;
@@ -540,6 +549,7 @@ void __fastcall TMainForm::eSettingsChange(TObject *Sender)
 // ---------------------------------------------------------------------------
 void TMainForm::SetSolidGroup(TObject *Sender)
 {
+/*
 	using namespace SolidGroups;
 	int ts = Globals::current_diameter; // текущий типоразмер (диаметр)
 	vector<Tube>etalons; // вектор эталонов из БД
@@ -601,12 +611,14 @@ void TMainForm::SetSolidGroup(TObject *Sender)
 			// memo ---------------------------------------------------
 		}
 	}
+	*/
 }
 
 // ---------------------------------------------------------------------------
 void TMainForm::IdentifySolidGroup()
 {
 	// *********считаем группу прочности*************************
+	/*
 	if (!SystemConst::isSolidGroupMS_DOS) // если считаем по старой схеме
 	{
 		using namespace SolidGroups;
@@ -703,6 +715,7 @@ void TMainForm::IdentifySolidGroup()
 			tubeSG.setSolidGroup(Group::Types::sgD);
 		}
 	}
+	*/
 }
 
 // -----------------------------------------------------------------------------
@@ -844,8 +857,8 @@ void __fastcall TMainForm::bWorkClick(TObject *Sender)
 
 	// Начало работы
 	StatusBarBottom->Refresh();
-	workonline = new ThreadOnLine(false, cbLinear->Checked,
-		cbSpectrotest->Checked, spectroscope);
+   //	workonline = new ThreadOnLine(false, cbLinear->Checked,
+   //		cbSpectrotest->Checked, spectroscope);
 
 	workonline->OnTerminate = CompleteWork;
 	workonline->FreeOnTerminate = true;
@@ -867,11 +880,11 @@ void __fastcall TMainForm::bCancelWorkClick(TObject *Sender)
 		}
 	}
 	SLD->SetAlarm(false);
-	if (cbSpectrotest->Checked)
-	{
-		TPr::SendToProtocol("Закрываем сбор данных от спектроскопа...");
-		spectroscope->Stop();
-	}
+	//if (cbSpectrotest->Checked)
+	//{
+   //		TPr::SendToProtocol("Закрываем сбор данных от спектроскопа...");
+	//	spectroscope->Stop();
+	//}
 	StatusBarTop->Panels->Items[1]->Text = "Режим \"Работа\" не завершен!";
 	StatusBarTop->Panels->Items[2]->Text = "Прервано пользователем!";
 	TPr::SendToProtocol("Прервано пользователем!");
@@ -899,7 +912,7 @@ void __fastcall TMainForm::CompleteWork(TObject *Sender)
 				(LinearDefectChart, MainForm);
 			CrossDefectChart->Refresh();
 			LinearDefectChart->Refresh();
-
+/*
 			// ждем получения группы прочности
 			if (SystemConst::isSolidity)
 			{
@@ -942,6 +955,31 @@ void __fastcall TMainForm::CompleteWork(TObject *Sender)
 				IdentifySolidGroup(); // пытаемся опеределить ГП
 
 			}
+			//Писать расчёт группы прочности конец
+      */
+
+		//Писать расчёт группы прочности
+			if(NULL != sg)
+			{
+                  vector<double> data = lcard->getSolidGroupSignal();
+				  wchar_t groupName[128];
+				  double result;
+				  unsigned color;
+				  
+				  sg->Compute(
+					  Globals::current_typesize.w_str()
+					  , (int)lcard->getSettings().frequencyPerChannel
+					  , &data[0]
+					  , data.size() / 2
+					  , groupName
+					  , &result
+					  , &color
+				  );
+
+				  pSolidGroup->Caption = groupName;
+				  pSolidGroup->Color = color;
+			}
+			//Писать расчёт группы прочности конец
 
 			Singleton::Instance()->SumResult->ComputeZonesData();
 			Singleton::Instance()->SumResult->PutResultOnChart(SummaryChart,
@@ -965,7 +1003,8 @@ void __fastcall TMainForm::CompleteWork(TObject *Sender)
 				Singleton::Instance()->SumResult->zones,
 				Singleton::Instance()->SumResult->decision.SubString(1, 1),
 				// конечный результат по трубе
-				"D", // группа прочности
+			  //	"D", // группа прочности
+			  pSolidGroup->Caption,
 				Globals::current_diameter, // Типоразмер
 				MainForm->cbEtalon->Checked);
 			// смотрим, что делать дальше
@@ -1300,8 +1339,8 @@ void TMainForm::SetAbleButtons(bool state, TButton *exc1, TMenuItem *exc2,
 	this->menuTest->Enabled = state;
 	this->menuTestAdvantech->Enabled = state;
 	// this->menuTestLcard->Enabled     	 = state;
-	this->menuSGTest->Enabled = state;
-	this->menuWork->Enabled = state;
+   //	this->menuSGTest->Enabled = state;
+   //	this->menuWork->Enabled = state;
 	this->menuCrashForward->Enabled = state;
 	this->menuReturnMode->Enabled = state;
 	this->menuManagement->Enabled = state;
@@ -1561,6 +1600,8 @@ void TMainForm::SendResultToASM(void)
 				solid_num = 2;
 			else if (pSolidGroup->Caption == "E")
 				solid_num = 3;
+			else solid_num = 1;
+			//-----
 			int iter = 0;
 			while (true)
 			{
@@ -1592,6 +1633,7 @@ void TMainForm::SendResultToASM(void)
 // --------------------------------------------------------------------------------
 void __fastcall TMainForm::menuTestSpectroscopeClick(TObject *Sender)
 {
+/*
 	spectroscope->Init(ini);
 	map<string, double>spectroResult;
 	TPr::SendToProtocol("Запускаем сбор данных от спектроскопа...");
@@ -1611,7 +1653,8 @@ void __fastcall TMainForm::menuTestSpectroscopeClick(TObject *Sender)
 			i != spectroResult.end(); i++)
 			{
 				data += UnicodeString((*i).first.c_str()) + " : " +
-					FloatToStr((float)(*i).second) + "; ";
+					FloatToStr(RoundTo((*i).second,-3)) + "; ";
+					//FloatToStr((float)(*i).second) + "; ";
 			}
 			TPr::SendToProtocol(data);
 		}
@@ -1620,12 +1663,14 @@ void __fastcall TMainForm::menuTestSpectroscopeClick(TObject *Sender)
 		TPr::SendToProtocol("Нет данных со спектроскопа.");
 	spectroscope->Stop();
 	TPr::SendToProtocol("Спектроскоп закрыт.");
+	*/
 }
 
 // ---------------------------------------------------------------------------
 
 void __fastcall TMainForm::menuSpectroSettingsClick(TObject *Sender)
 {
+/*
 	SpectroSettingForm = new TSpectroSettingForm(this);
 	String str;
 	int index;
@@ -1705,13 +1750,24 @@ void __fastcall TMainForm::menuSpectroSettingsClick(TObject *Sender)
 		}
 	}
 	delete SpectroSettingForm;
+  */
 }
 
 // ---------------------------------------------------------------------------
 void __fastcall TMainForm::cbSpectrotestClick(TObject *Sender)
 {
-	ini->WriteBool("Spectroscope", "IsPresent", cbSpectrotest->Enabled);
-	if (cbSpectrotest->Enabled)
-		spectroscope->Init(ini);
+   //	ini->WriteBool("Spectroscope", "IsPresent", cbSpectrotest->Enabled);
+  //	if (cbSpectrotest->Enabled)
+  //		spectroscope->Init(ini);
 }
 // ---------------------------------------------------------------------------
+void __fastcall TMainForm::SolidGroupClick(TObject *Sender)
+{
+  if(NULL != sg)
+  {
+	  sg->OptionsWindow();
+  }
+}
+//---------------------------------------------------------------------------
+
+

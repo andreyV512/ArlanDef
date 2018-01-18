@@ -2,6 +2,7 @@
 #include "SignalList.h"
 #include<IniFiles.hpp>
 #include "Protocol.h"
+#include <Dialogs.hpp>
 #pragma package(smart_init)
 SignalList::SignalList(TIniFile* _ini)
 {
@@ -50,6 +51,8 @@ SignalList::SignalList(TIniFile* _ini)
 #ifndef _DEBUG
 	if(!dev->IsOk())
 		throw(Exception("SignalList::SignalList: не смогли открыть плату Advantech1730"));
+#else
+	MessageDlg("¬ключЄн макрос _DEBUG", mtError, TMsgDlgButtons() << mbOK,NULL);
 #endif
 	IsAlarm=false;
 	wasAlarm=false;
