@@ -40,8 +40,8 @@
 			<VerInfo_Keys>CompanyName=;FileDescription=;FileVersion=1.0.0.0;InternalName=;LegalCopyright=;LegalTrademarks=;OriginalFilename=;ProductName=;ProductVersion=1.0.0.0;Comments=</VerInfo_Keys>
 			<DCC_Namespace>Vcl;Vcl.Imaging;Vcl.Touch;Vcl.Samples;Vcl.Shell;System;Xml;Data;Datasnap;Web;Soap;$(DCC_Namespace)</DCC_Namespace>
 			<VerInfo_Locale>1049</VerInfo_Locale>
-			<ILINK_LibraryPath>sg\;..\..\Kandry1310\Defectoscope\1730\inc\;A1730\;..\Башкирия\Internet DefOnline\;MitCOME\;slycomm\;$(ILINK_LibraryPath)</ILINK_LibraryPath>
-			<IncludePath>sg\;..\..\Kandry1310\Defectoscope\1730\inc\;A1730\;..\Башкирия\Internet DefOnline\;MitCOME\;slycomm\;$(IncludePath)</IncludePath>
+			<ILINK_LibraryPath>L502\;sg\;..\..\Kandry1310\Defectoscope\1730\inc\;A1730\;..\Башкирия\Internet DefOnline\;MitCOME\;slycomm\;$(ILINK_LibraryPath)</ILINK_LibraryPath>
+			<IncludePath>L502\;sg\;..\..\Kandry1310\Defectoscope\1730\inc\;A1730\;..\Башкирия\Internet DefOnline\;MitCOME\;slycomm\;$(IncludePath)</IncludePath>
 			<LinkPackageStatics>rtl.lib;vcl.lib;Tee.lib;vclimg.lib;dbrtl.lib;adortl.lib;vclactnband.lib;vclx.lib;vcldb.lib;bcbsmp.lib;inet.lib;dsnap.lib;dsnapcon.lib;Comm.lib</LinkPackageStatics>
 			<OutputExt>exe</OutputExt>
 			<PackageImports>rtl.bpi;vcl.bpi;bcbie.bpi;xmlrtl.bpi;vclactnband.bpi;vclx.bpi;bcbsmp.bpi;VclSmp.bpi;vclimg.bpi;svnui.bpi;svn.bpi;bdertl.bpi;TeeUI.bpi;TeeDB.bpi;Tee.bpi;vcldb.bpi;dbrtl.bpi;vcldbx.bpi;vcltouch.bpi;dsnap.bpi;dsnapcon.bpi;vclib.bpi;ibxpress.bpi;adortl.bpi;IndyCore.bpi;IndySystem.bpi;IndyProtocols.bpi;inet.bpi;intrawebdb_110_150.bpi;Intraweb_110_150.bpi;vclie.bpi;websnap.bpi;webdsnap.bpi;inetdb.bpi;inetdbbde.bpi;inetdbxpress.bpi;soaprtl.bpi;vclribbon.bpi;dbexpress.bpi;DbxCommonDriver.bpi;DataSnapIndy10ServerTransport.bpi;DataSnapProviderClient.bpi;DbxClientDriver.bpi;DataSnapClient.bpi;dbxcds.bpi;DataSnapServer.bpi;AzureCloud.bpi;DBXInterBaseDriver.bpi;DBXMySQLDriver.bpi;DBXFirebirdDriver.bpi;DBXSybaseASEDriver.bpi;DBXSybaseASADriver.bpi;DBXOracleDriver.bpi;DBXMSSQLDriver.bpi;DBXInformixDriver.bpi;DBXDb2Driver.bpi;CodeSiteExpressVcl.bpi;Comm.bpi;$(PackageImports).bpi</PackageImports>
@@ -204,6 +204,26 @@
 				<DependentOn>Inverter.h</DependentOn>
 				<BuildOrder>37</BuildOrder>
 			</CppCompile>
+			<None Include="L502\e502api.h">
+				<VirtualFolder>{9D906AE4-15A2-4B13-9D6E-D0CEAB6A3ED6}</VirtualFolder>
+				<BuildOrder>53</BuildOrder>
+			</None>
+			<None Include="L502\l502api.h">
+				<VirtualFolder>{9D906AE4-15A2-4B13-9D6E-D0CEAB6A3ED6}</VirtualFolder>
+				<BuildOrder>54</BuildOrder>
+			</None>
+			<None Include="L502\l502api_compat.h">
+				<VirtualFolder>{9D906AE4-15A2-4B13-9D6E-D0CEAB6A3ED6}</VirtualFolder>
+				<BuildOrder>55</BuildOrder>
+			</None>
+			<None Include="L502\lcard_pstdint.h">
+				<VirtualFolder>{9D906AE4-15A2-4B13-9D6E-D0CEAB6A3ED6}</VirtualFolder>
+				<BuildOrder>56</BuildOrder>
+			</None>
+			<None Include="L502\x502api.h">
+				<VirtualFolder>{9D906AE4-15A2-4B13-9D6E-D0CEAB6A3ED6}</VirtualFolder>
+				<BuildOrder>57</BuildOrder>
+			</None>
 			<CppCompile Include="LCARD502.cpp">
 				<DependentOn>LCARD502.h</DependentOn>
 				<BuildOrder>36</BuildOrder>
@@ -429,6 +449,7 @@
 					</Excluded_Packages>
 					<VFOLDERS>
 						<VFOLDER name="1730" ID="{1F342069-8ADD-424B-A13F-61814C97D9E6}"/>
+						<VFOLDER name="L502" ID="{9D906AE4-15A2-4B13-9D6E-D0CEAB6A3ED6}"/>
 						<VFOLDER name="sg" ID="{ECA637DA-F4CF-4F77-BACB-EE2C00B0FFB2}"/>
 					</VFOLDERS>
 				</CPlusPlusBuilder.Personality>
