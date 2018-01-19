@@ -29,5 +29,6 @@ void DestroySolid(ISG_DLL **o)
 			if(NULL != *o)destroy(o);
 		}
 		FreeLibrary(hinstLib);
+		hinstLib = NULL;
 	}
 }

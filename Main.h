@@ -174,9 +174,6 @@ __published:	// IDE-managed Components
 	TPanel *lResult;
 	TXPManifest *XPManifest1;
 	TMenuItem *N2;
-	TCheckBox *cbSpectrotest;
-	TMenuItem *menuTestSpectroscope;
-	TMenuItem *menuSpectroSettings;
 
 	TFRHistory *frHistory;
 	TMenuItem *MIASMTest;

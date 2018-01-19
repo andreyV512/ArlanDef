@@ -11,6 +11,7 @@ LCard502 *lcard;
 //---------------------------------------------------------------------------
 LCard502::LCard502()
 {
+	CountCollectedMeasurements = 0;
 	//Заполним дефолтные настройки
 	Parameters.RECV_TOUT = 250;
 	Parameters.syncMode = L502_SYNC_INTERNAL;                        //см. l502api.h

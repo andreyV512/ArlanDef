@@ -1690,15 +1690,6 @@ object MainForm: TMainForm
     ExplicitWidth = 247
     ExplicitHeight = 30
   end
-  object cbSpectrotest: TCheckBox
-    Left = 566
-    Top = 102
-    Width = 97
-    Height = 17
-    Caption = #1057#1087#1077#1082#1090#1088#1086#1090#1077#1089#1090
-    TabOrder = 22
-    OnClick = cbSpectrotestClick
-  end
   object MainMenu: TMainMenu
     Left = 1088
     object menuJob: TMenuItem
@@ -1743,10 +1734,6 @@ object MainForm: TMainForm
       object menuColors: TMenuItem
         Caption = #1053#1072#1089#1090#1088#1086#1081#1082#1080' '#1094#1074#1077#1090#1072
         OnClick = menuColorsClick
-      end
-      object menuSpectroSettings: TMenuItem
-        Caption = #1057#1087#1077#1082#1090#1088#1086#1089#1082#1086#1087
-        OnClick = menuSpectroSettingsClick
       end
     end
     object menuTube: TMenuItem
@@ -1805,10 +1792,6 @@ object MainForm: TMainForm
       object MIASMTest: TMenuItem
         Caption = #1058#1077#1089#1090' '#1089#1074#1103#1079#1080' '#1089' '#1040#1057#1059
         OnClick = MIASMTestClick
-      end
-      object menuTestSpectroscope: TMenuItem
-        Caption = #1058#1077#1089#1090' '#1089#1087#1077#1082#1090#1088#1086#1089#1082#1086#1087#1072
-        OnClick = menuTestSpectroscopeClick
       end
     end
     object SolidGroup: TMenuItem
