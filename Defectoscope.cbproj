@@ -40,7 +40,7 @@
 			<VerInfo_Keys>CompanyName=;FileDescription=;FileVersion=1.0.0.0;InternalName=;LegalCopyright=;LegalTrademarks=;OriginalFilename=;ProductName=;ProductVersion=1.0.0.0;Comments=</VerInfo_Keys>
 			<DCC_Namespace>Vcl;Vcl.Imaging;Vcl.Touch;Vcl.Samples;Vcl.Shell;System;Xml;Data;Datasnap;Web;Soap;$(DCC_Namespace)</DCC_Namespace>
 			<VerInfo_Locale>1049</VerInfo_Locale>
-			<ILINK_LibraryPath>L502\;sg\;..\..\Kandry1310\Defectoscope\1730\inc\;A1730\;..\Башкирия\Internet DefOnline\;MitCOME\;slycomm\;$(ILINK_LibraryPath)</ILINK_LibraryPath>
+			<ILINK_LibraryPath>Lib\;L502\;sg\;..\..\Kandry1310\Defectoscope\1730\inc\;A1730\;..\Башкирия\Internet DefOnline\;MitCOME\;slycomm\;$(ILINK_LibraryPath)</ILINK_LibraryPath>
 			<IncludePath>L502\;sg\;..\..\Kandry1310\Defectoscope\1730\inc\;A1730\;..\Башкирия\Internet DefOnline\;MitCOME\;slycomm\;$(IncludePath)</IncludePath>
 			<LinkPackageStatics>rtl.lib;vcl.lib;Tee.lib;vclimg.lib;dbrtl.lib;adortl.lib;vclactnband.lib;vclx.lib;vcldb.lib;bcbsmp.lib;inet.lib;dsnap.lib;dsnapcon.lib;Comm.lib</LinkPackageStatics>
 			<OutputExt>exe</OutputExt>
@@ -91,7 +91,6 @@
 			<ILINK_TranslatedLibraryPath>$(BDSLIB)\$(PLATFORM)\debug\$(LANGDIR);$(ILINK_TranslatedLibraryPath)</ILINK_TranslatedLibraryPath>
 		</PropertyGroup>
 		<PropertyGroup Condition="'$(Cfg_1_Win32)'!=''">
-			<ILINK_LibraryPath>Lib\;$(ILINK_LibraryPath)</ILINK_LibraryPath>
 			<BCC_Defines>_DEBUG;$(BCC_Defines)</BCC_Defines>
 			<BCC_OutputDir>C:\Project\Eagle DefOnline\Debug\Win32\</BCC_OutputDir>
 			<BCC_wpar>false</BCC_wpar>
@@ -113,6 +112,10 @@
 			<IncludePath>c:\Program Files\L-Card\lpcie\include\;DspFilters\include\;$(IncludePath)</IncludePath>
 		</PropertyGroup>
 		<ItemGroup>
+			<None Include="..\..\Kandry1310\Defectoscope\1730\inc\BDaqCL.h">
+				<VirtualFolder>{1F342069-8ADD-424B-A13F-61814C97D9E6}</VirtualFolder>
+				<BuildOrder>50</BuildOrder>
+			</None>
 			<CppCompile Include="A1730\A1730.cpp">
 				<DependentOn>A1730\A1730.h</DependentOn>
 				<BuildOrder>51</BuildOrder>
@@ -229,6 +232,11 @@
 				<DependentOn>LCARD502.h</DependentOn>
 				<BuildOrder>36</BuildOrder>
 			</CppCompile>
+			<LibFiles Include="Lib\l502api.lib">
+				<VirtualFolder>{4B14ED40-AD14-426A-8B07-840282A21F26}</VirtualFolder>
+				<IgnorePath>true</IgnorePath>
+				<BuildOrder>58</BuildOrder>
+			</LibFiles>
 			<CppCompile Include="Main.cpp">
 				<Form>MainForm</Form>
 				<DependentOn>Main.h</DependentOn>
@@ -365,10 +373,6 @@
 				<DependentOn>ViewEtalons.h</DependentOn>
 				<BuildOrder>18</BuildOrder>
 			</CppCompile>
-			<None Include="..\..\Kandry1310\Defectoscope\1730\inc\BDaqCL.h">
-				<VirtualFolder>{1F342069-8ADD-424B-A13F-61814C97D9E6}</VirtualFolder>
-				<BuildOrder>50</BuildOrder>
-			</None>
 			<FormResources Include="ReportsView.dfm"/>
 			<FormResources Include="Settings.dfm"/>
 			<FormResources Include="Protocol.dfm"/>
@@ -451,6 +455,7 @@
 					<VFOLDERS>
 						<VFOLDER name="1730" ID="{1F342069-8ADD-424B-A13F-61814C97D9E6}"/>
 						<VFOLDER name="L502" ID="{9D906AE4-15A2-4B13-9D6E-D0CEAB6A3ED6}"/>
+						<VFOLDER name="Lib" ID="{4B14ED40-AD14-426A-8B07-840282A21F26}"/>
 						<VFOLDER name="sg" ID="{ECA637DA-F4CF-4F77-BACB-EE2C00B0FFB2}"/>
 					</VFOLDERS>
 				</CPlusPlusBuilder.Personality>
