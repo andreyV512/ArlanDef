@@ -91,7 +91,6 @@
 			<ILINK_TranslatedLibraryPath>$(BDSLIB)\$(PLATFORM)\debug\$(LANGDIR);$(ILINK_TranslatedLibraryPath)</ILINK_TranslatedLibraryPath>
 		</PropertyGroup>
 		<PropertyGroup Condition="'$(Cfg_1_Win32)'!=''">
-			<BCC_Defines>_DEBUG;$(BCC_Defines)</BCC_Defines>
 			<BCC_OutputDir>C:\Project\Eagle DefOnline\Debug\Win32\</BCC_OutputDir>
 			<BCC_wpar>false</BCC_wpar>
 			<BCC_wiip>false</BCC_wiip>
@@ -374,25 +373,25 @@
 				<BuildOrder>18</BuildOrder>
 			</CppCompile>
 			<FormResources Include="ReportsView.dfm"/>
-			<FormResources Include="Settings.dfm"/>
 			<FormResources Include="Protocol.dfm"/>
-			<FormResources Include="uFRTubeHistory.dfm"/>
+			<FormResources Include="Settings.dfm"/>
+			<FormResources Include="Manage.dfm"/>
 			<FormResources Include="uFRHistory.dfm"/>
 			<FormResources Include="uFASMTest.dfm"/>
+			<FormResources Include="uFRTubeHistory.dfm"/>
 			<FormResources Include="ViewEtalons.dfm"/>
 			<FormResources Include="View.dfm"/>
-			<FormResources Include="SolidGroupTest.dfm"/>
 			<FormResources Include="SolidGroupGraphics.dfm"/>
 			<FormResources Include="SolidGroup.dfm"/>
+			<FormResources Include="SolidGroupTest.dfm"/>
 			<FormResources Include="SpectroSettings.dfm"/>
-			<FormResources Include="ABOUT_NTC_NK_URAN.dfm"/>
+			<FormResources Include="Main.dfm"/>
 			<FormResources Include="A1730\uFSignalsState.dfm"/>
 			<FormResources Include="A1730\uFRSigPanel.dfm"/>
-			<FormResources Include="ADCSettings.dfm"/>
+			<FormResources Include="ABOUT_NTC_NK_URAN.dfm"/>
 			<FormResources Include="ColorSettings.dfm"/>
+			<FormResources Include="ADCSettings.dfm"/>
 			<FormResources Include="DataModule.dfm"/>
-			<FormResources Include="Manage.dfm"/>
-			<FormResources Include="Main.dfm"/>
 			<FormResources Include="GraphicsCenters.dfm"/>
 			<BuildConfiguration Include="Release">
 				<Key>Cfg_2</Key>
