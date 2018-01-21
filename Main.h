@@ -231,6 +231,7 @@ __published:	// IDE-managed Components
 	void __fastcall cbSpectrotestClick(TObject *Sender);
 	void __fastcall TimerThreadCompleteTimer(TObject *Sender);
 	void __fastcall SolidGroupClick(TObject *Sender);
+	void __fastcall pSolidGroupClick(TObject *Sender);
 
 private:	// User declarations
    ISG_DLL *sg;
