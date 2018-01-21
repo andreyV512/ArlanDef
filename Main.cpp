@@ -937,10 +937,10 @@ void __fastcall TMainForm::CompleteWork(TObject *Sender) {
 				sg->Compute1(Globals::current_typesize.w_str(),
 					(int)lcard->getSettings().frequencyPerChannel, &data[0],
 					data.size() / 2, groupName, &result, &color);
-
-				pSolidGroup->Caption = groupName;
+				String s = groupName;
+				pSolidGroup->Caption = s;//groupName;
 				pSolidGroup->Color = clWhite;//color;
-				Caption = groupName;
+				//Caption = groupName;
 			}
 			// Писать расчёт группы прочности конец
 
@@ -1702,9 +1702,10 @@ void __fastcall TMainForm::pSolidGroupClick(TObject *Sender)
 				sg->Compute1(Globals::current_typesize.w_str(),
 					(int)lcard->getSettings().frequencyPerChannel, &data[0],
 					data.size() / 2, groupName, &result, &color);
-
+				String s;
+				pSolidGroup->Caption = s;
 				pSolidGroup->Caption = groupName;
-				Caption = groupName;
+				//Caption = groupName;
 				pSolidGroup->Color = clWhite;//color;
 			}
 }
