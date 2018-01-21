@@ -936,6 +936,7 @@ void __fastcall TMainForm::CompleteWork(TObject *Sender) {
 
 				pSolidGroup->Caption = groupName;
 				pSolidGroup->Color = clWhite;//color;
+				Caption = groupName;
 			}
 			// Писать расчёт группы прочности конец
 
@@ -1688,7 +1689,8 @@ void __fastcall TMainForm::pSolidGroupClick(TObject *Sender)
 					data.size() / 2, groupName, &result, &color);
 
 				pSolidGroup->Caption = groupName;
-				pSolidGroup->Color = color;
+				Caption = groupName;
+				pSolidGroup->Color = clWhite;//color;
 			}
 }
 //---------------------------------------------------------------------------
