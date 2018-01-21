@@ -2,7 +2,7 @@ object MainForm: TMainForm
   Left = -44
   Top = 0
   Caption = #1052#1086#1076#1091#1083#1100' '#1101#1083#1077#1082#1090#1088#1086#1084#1072#1075#1085#1080#1090#1085#1086#1081' '#1076#1077#1092#1077#1082#1090#1086#1089#1082#1086#1087#1080#1080
-  ClientHeight = 781
+  ClientHeight = 794
   ClientWidth = 1284
   Color = clBtnFace
   Constraints.MinHeight = 840
@@ -906,7 +906,7 @@ object MainForm: TMainForm
     end
     object eLinearBorder1: TEdit
       Left = 192
-      Top = 12
+      Top = 18
       Width = 73
       Height = 22
       Hint = #1055#1086#1088#1086#1075' '#1086#1090#1073#1088#1072#1082#1086#1074#1082#1080' '#1074' '#1087#1088#1086#1094#1077#1085#1090#1072#1093' '#1086#1090' '#1091#1088#1086#1074#1085#1103' '#1089#1080#1075#1085#1072#1083#1072
@@ -1402,7 +1402,7 @@ object MainForm: TMainForm
   object StatusBarBottom: TStatusBar
     AlignWithMargins = True
     Left = 3
-    Top = 747
+    Top = 760
     Width = 1278
     Height = 31
     Panels = <
