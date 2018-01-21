@@ -825,8 +825,11 @@ void __fastcall TMainForm::bWorkClick(TObject *Sender) {
 
 	// Начало работы
 	StatusBarBottom->Refresh();
-	// workonline = new ThreadOnLine(false, cbLinear->Checked,
-	// cbSpectrotest->Checked, spectroscope);
+	 //workonline = new ThreadOnLine(false, cbLinear->Checked,
+	 //cbSpectrotest->Checked, spectroscope);
+
+		 workonline = new ThreadOnLine(false, cbLinear->Checked,
+	 false, NULL);//spectroscope);
 
 	workonline->OnTerminate = CompleteWork;
 	workonline->FreeOnTerminate = true;
@@ -932,7 +935,7 @@ void __fastcall TMainForm::CompleteWork(TObject *Sender) {
 					data.size() / 2, groupName, &result, &color);
 
 				pSolidGroup->Caption = groupName;
-				pSolidGroup->Color = color;
+				pSolidGroup->Color = clWhite;//color;
 			}
 			// Писать расчёт группы прочности конец
 
@@ -1098,6 +1101,20 @@ void __fastcall TMainForm::menuSaveTubeClick(TObject *Sender) {
 
 		Singleton::Instance()->ThResult->SaveTubeToFile
 			(SaveToFileDialog->FileName); // Толщинометрия (только zone_data)
+
+			if (NULL != sg) {
+				vector<double>data = lcard->getSolidGroupSignal();
+				wchar_t groupName[128];
+				double result;
+				unsigned color;
+
+				sg->Compute1(Globals::current_typesize.w_str(),
+					(int)lcard->getSettings().frequencyPerChannel, &data[0],
+					data.size() / 2, groupName, &result, &color);
+
+				pSolidGroup->Caption = groupName;
+				pSolidGroup->Color = clWhite;//color;
+			}
 	}
 }
 
