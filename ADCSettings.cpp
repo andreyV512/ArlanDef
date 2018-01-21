@@ -306,9 +306,10 @@ void __fastcall TADCSettForm::bSaveClick(TObject *Sender)
 	ini->WriteInteger("OtherSettings","SensorSG",     SpinSG->Value);
 	ini->WriteInteger("OtherSettings","SensorCurr",   SpinCurr->Value);
 	ini->WriteBool   ("OtherSettings","IsCalcMS_DOS", cbCalcSolidGroup->Checked);
+	Globals::defaultGroupCheck = cbCalcSolidGroup->Checked;
 
 	ini->WriteBool("OtherSettings","isMedianFilter", cbMedianFilter->Checked);
-    ini->WriteString("OtherSettings","StandartSolidGroup",cbSolidGroup->Text);
+	ini->WriteString("OtherSettings","StandartSolidGroup",cbSolidGroup->Text);
 	ini->WriteInteger("OtherSettings","WidthMedianFilter",ComboBoxWidthMF->Text.ToInt());
 	//Данные по соленоидам
 	ini->WriteInteger("PP", "amperageChannel", spCrossAmperage->Value);
@@ -549,4 +550,5 @@ void __fastcall TADCSettForm::rgFilterSubTypePpClick(TObject *Sender)
 	ChooseFilterPp();
 }
 //---------------------------------------------------------------------------
+
 

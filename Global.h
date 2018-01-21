@@ -49,9 +49,13 @@ public:
 	static const int Cross_sensors=12;
 	// ! параметр частотника в котором хранится скорость врщения
 	static const int defaultRotParameter=4;
+	static bool defaultGroupCheck;
+	static String defaultCroup;
 private:
 
 };
+
+bool Globals::defaultGroupCheck;
 
 String Globals::current_typesize=L"2";
 int Globals::current_diameter=2;
@@ -90,6 +94,8 @@ public:
 	static bool isCrossDigitalFilter;
 	// ! Будем ли фильтровать сигнал продольного цифровым фильтром
 	static bool isLinearDigitalFilter;
+
+
 
 	// ! Установим постоянные характеристики проекта
 	static void SetSystemConstants();

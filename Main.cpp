@@ -56,6 +56,10 @@ void __fastcall TMainForm::FormCreate(TObject *Sender) {
 		TPr::Show();
 	DragAcceptFiles(Handle, true); // Разрешаем перетаскивание файлов
 
+
+
+	Globals::defaultGroupCheck = ini->ReadBool("OtherSettings","IsCalcMS_DOS", 1);
+
 	bool RHKret = RegisterHotKey(MainForm->Handle,
 		// Handle окна, которому отправлять сообщения WM_HOTKEY
 		0x00E, // УСЛОВНЫЙ идентификатор горячего ключа
@@ -1102,7 +1106,8 @@ void __fastcall TMainForm::menuSaveTubeClick(TObject *Sender) {
 
 		Singleton::Instance()->ThResult->SaveTubeToFile
 			(SaveToFileDialog->FileName); // Толщинометрия (только zone_data)
-
+		  if(!Globals::defaultGroupCheck)
+		  {
 			if (NULL != sg) {
 				vector<double>data = lcard->getSolidGroupSignal();
 				wchar_t groupName[128];
@@ -1115,6 +1120,16 @@ void __fastcall TMainForm::menuSaveTubeClick(TObject *Sender) {
 
 				pSolidGroup->Caption = groupName;
 				pSolidGroup->Color = clWhite;//color;
+				Caption = groupName;
+			}
+			else
+			{
+				pSolidGroup->Caption = ini->ReadString("OtherSettings", "StandartSolidGroup", "D");
+            }
+			}
+			else
+			{
+				pSolidGroup->Caption = ini->ReadString("OtherSettings", "StandartSolidGroup", "D");
 			}
 	}
 }

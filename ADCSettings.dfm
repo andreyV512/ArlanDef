@@ -32,12 +32,9 @@ object ADCSettForm: TADCSettForm
     Font.Style = []
     ParentFont = False
     TabOrder = 0
+    ExplicitTop = -6
     object ppPage: TTabSheet
       Caption = #1053#1072#1089#1090#1088#1086#1081#1082#1080' '#1082#1086#1085#1090#1088#1086#1083#1103
-      ExplicitLeft = 0
-      ExplicitTop = 0
-      ExplicitWidth = 0
-      ExplicitHeight = 0
       object gbPP: TGroupBox
         Left = 8
         Top = 8
@@ -82,7 +79,7 @@ object ADCSettForm: TADCSettForm
         object lamperage: TLabel
           Left = 8
           Top = 53
-          Width = 24
+          Width = 23
           Height = 19
           Caption = #1058#1086#1082
           Font.Charset = RUSSIAN_CHARSET
@@ -178,7 +175,7 @@ object ADCSettForm: TADCSettForm
         object lLinearAmperage: TLabel
           Left = 8
           Top = 48
-          Width = 24
+          Width = 23
           Height = 19
           Caption = #1058#1086#1082
           Font.Charset = RUSSIAN_CHARSET
@@ -234,10 +231,6 @@ object ADCSettForm: TADCSettForm
     object prPage: TTabSheet
       Caption = #1053#1072#1089#1090#1088#1086#1081#1082#1080' LCard 502'
       ImageIndex = 1
-      ExplicitLeft = 0
-      ExplicitTop = 0
-      ExplicitWidth = 0
-      ExplicitHeight = 0
       object Label1: TLabel
         Left = 10
         Top = 59
@@ -353,14 +346,10 @@ object ADCSettForm: TADCSettForm
     object OtherPage: TTabSheet
       Caption = #1055#1088#1086#1095#1080#1077' '#1085#1072#1089#1090#1088#1086#1081#1082#1080
       ImageIndex = 2
-      ExplicitLeft = 0
-      ExplicitTop = 0
-      ExplicitWidth = 0
-      ExplicitHeight = 0
       object Label4: TLabel
         Left = 8
         Top = 56
-        Width = 102
+        Width = 100
         Height = 19
         Caption = #1058#1086#1082#1086#1074#1099#1081' '#1082#1072#1085#1072#1083
       end
@@ -374,7 +363,7 @@ object ADCSettForm: TADCSettForm
       object Label6: TLabel
         Left = 10
         Top = 152
-        Width = 202
+        Width = 201
         Height = 19
         Caption = #1057#1082#1086#1088#1086#1089#1090#1100' '#1074#1088#1072#1097#1077#1085#1080#1103' '#1087#1088#1080' '#1090#1077#1089#1090#1077
       end
@@ -420,9 +409,9 @@ object ADCSettForm: TADCSettForm
       object cbCalcSolidGroup: TCheckBox
         Left = 10
         Top = 16
-        Width = 247
+        Width = 343
         Height = 17
-        Caption = #1056#1072#1089#1095#1077#1090' '#1043#1055' '#1089' '#1087#1086#1084#1086#1097#1100#1102' '#1082#1086#1088#1088#1077#1083#1103#1094#1080#1080
+        Caption = #1048#1089#1087#1086#1083#1100#1079#1086#1074#1072#1090#1100' '#1089#1090#1072#1085#1076#1072#1088#1090#1085#1091#1102' '#1075#1088#1091#1087#1087#1091' '#1087#1088#1086#1095#1085#1086#1089#1090#1080
         TabOrder = 2
       end
       object eFriquencyRot: TEdit
@@ -455,14 +444,10 @@ object ADCSettForm: TADCSettForm
     object FilterPAge: TTabSheet
       Caption = #1060#1080#1083#1100#1090#1088#1072#1094#1080#1103
       ImageIndex = 4
-      ExplicitLeft = 0
-      ExplicitTop = 0
-      ExplicitWidth = 0
-      ExplicitHeight = 0
       object lWidthMedianFilter: TLabel
         Left = 17
         Top = 43
-        Width = 201
+        Width = 200
         Height = 19
         Caption = #1064#1080#1088#1080#1085#1072' '#1084#1077#1076#1080#1072#1085#1085#1086#1075#1086' '#1092#1080#1083#1100#1090#1088#1072
       end
@@ -529,21 +514,21 @@ object ADCSettForm: TADCSettForm
         object Label13: TLabel
           Left = 8
           Top = 80
-          Width = 101
+          Width = 100
           Height = 19
           Caption = #1062#1077#1085#1090#1088' '#1092#1080#1083#1100#1090#1088#1072
         end
         object Label17: TLabel
           Left = 8
           Top = 110
-          Width = 116
+          Width = 115
           Height = 19
           Caption = #1064#1080#1088#1080#1085#1072' '#1092#1080#1083#1100#1090#1088#1072
         end
         object Label18: TLabel
           Left = 8
           Top = 140
-          Width = 141
+          Width = 140
           Height = 38
           Caption = #1055#1091#1083#1100#1089#1072#1094#1080#1080' '#1074' '#1087#1086#1083#1086#1089#1077' '#1087#1088#1086#1087#1091#1089#1082#1072#1085#1080#1103
           WordWrap = True
@@ -733,21 +718,21 @@ object ADCSettForm: TADCSettForm
         object Label22: TLabel
           Left = 8
           Top = 80
-          Width = 101
+          Width = 100
           Height = 19
           Caption = #1062#1077#1085#1090#1088' '#1092#1080#1083#1100#1090#1088#1072
         end
         object Label23: TLabel
           Left = 8
           Top = 110
-          Width = 116
+          Width = 115
           Height = 19
           Caption = #1064#1080#1088#1080#1085#1072' '#1092#1080#1083#1100#1090#1088#1072
         end
         object Label24: TLabel
           Left = 8
           Top = 140
-          Width = 141
+          Width = 140
           Height = 38
           Caption = #1055#1091#1083#1100#1089#1072#1094#1080#1080' '#1074' '#1087#1086#1083#1086#1089#1077' '#1087#1088#1086#1087#1091#1089#1082#1072#1085#1080#1103
           WordWrap = True
