@@ -1695,7 +1695,9 @@ void __fastcall TMainForm::SolidGroupClick(TObject *Sender) {
 // ---------------------------------------------------------------------------
 void __fastcall TMainForm::pSolidGroupClick(TObject *Sender)
 {
-    	if (NULL != sg) {
+    	if(!Globals::defaultGroupCheck)
+		  {
+			if (NULL != sg) {
 				vector<double>data = lcard->getSolidGroupSignal();
 				wchar_t groupName[128];
 				double result;
@@ -1704,12 +1706,20 @@ void __fastcall TMainForm::pSolidGroupClick(TObject *Sender)
 				sg->Compute1(Globals::current_typesize.w_str(),
 					(int)lcard->getSettings().frequencyPerChannel, &data[0],
 					data.size() / 2, groupName, &result, &color);
-			//	String s;
-			  //	pSolidGroup->Caption = s;
+
 				pSolidGroup->Caption = groupName;
-				//Caption = groupName;
 				pSolidGroup->Color = clWhite;//color;
 				pSolidGroup->Refresh();
+			   //	Caption = groupName;
+			}
+			else
+			{
+				pSolidGroup->Caption = ini->ReadString("OtherSettings", "StandartSolidGroup", "D");
+            }
+			}
+			else
+			{
+				pSolidGroup->Caption = ini->ReadString("OtherSettings", "StandartSolidGroup", "D");
 			}
 }
 //---------------------------------------------------------------------------
