@@ -178,7 +178,7 @@ void TADCSettForm::FillAllControls()
 	SpinSG->Value   = ini->ReadInteger("OtherSettings","SensorSG",16);
 	SpinCurr->Value = ini->ReadInteger("OtherSettings","SensorCurr",17);
 	//Вариант расчета ГП
-	cbCalcSolidGroup->Checked = ini->ReadBool("OtherSettings","IsCalcMS_DOS", 1);
+	cbCalcSolidGroup->Checked = ini->ReadBool("OtherSettings","IsCalcSolid", 1);
 
 	eFriquencyRot->Text = ini->ReadInteger("Default" , "SpeedInTest" , 10);
 
@@ -305,7 +305,7 @@ void __fastcall TADCSettForm::bSaveClick(TObject *Sender)
 
 	ini->WriteInteger("OtherSettings","SensorSG",     SpinSG->Value);
 	ini->WriteInteger("OtherSettings","SensorCurr",   SpinCurr->Value);
-	ini->WriteBool   ("OtherSettings","IsCalcMS_DOS", cbCalcSolidGroup->Checked);
+	ini->WriteBool   ("OtherSettings","IsCalcSolid", cbCalcSolidGroup->Checked);
 	Globals::defaultGroupCheck = cbCalcSolidGroup->Checked;
 
 	ini->WriteBool("OtherSettings","isMedianFilter", cbMedianFilter->Checked);

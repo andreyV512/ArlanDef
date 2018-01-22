@@ -10,7 +10,7 @@ void SystemConst::SetSystemConstants()
 
 	// читаем параметры из файла
 	TIniFile *ini=new TIniFile(Globals::IniFileName);
-	isSolidGroupMS_DOS=ini->ReadBool("OtherSettings","IsCalcMS_DOS",1);
+	isSolidGroupMS_DOS=ini->ReadBool("OtherSettings","IsCalcSolid",1);
 	ComWithASU=ini->ReadBool("OtherSettings","ComWithASU",0);
 	SolidGroupSource=ini->ReadInteger("OtherSettings","SolidGroupSource",-1);
 	isMedianFilter=ini->ReadBool("OtherSettings","isMedianFilter",0);
