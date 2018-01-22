@@ -928,6 +928,8 @@ void __fastcall TMainForm::CompleteWork(TObject *Sender) {
 			 */
 
 			// Писать расчёт группы прочности
+			if(!Globals::defaultGroupCheck)
+		  {
 			if (NULL != sg) {
 				vector<double>data = lcard->getSolidGroupSignal();
 				wchar_t groupName[128];
@@ -937,11 +939,20 @@ void __fastcall TMainForm::CompleteWork(TObject *Sender) {
 				sg->Compute1(Globals::current_typesize.w_str(),
 					(int)lcard->getSettings().frequencyPerChannel, &data[0],
 					data.size() / 2, groupName, &result, &color);
-				//String s = groupName;
+
 				pSolidGroup->Caption = groupName;
 				pSolidGroup->Color = clWhite;//color;
 				pSolidGroup->Refresh();
-				Caption = "Модуль электромагнитной дефектоскопии";
+			   //	Caption = groupName;
+			}
+			else
+			{
+				pSolidGroup->Caption = ini->ReadString("OtherSettings", "StandartSolidGroup", "D");
+            }
+			}
+			else
+			{
+				pSolidGroup->Caption = ini->ReadString("OtherSettings", "StandartSolidGroup", "D");
 			}
 			// Писать расчёт группы прочности конец
 
