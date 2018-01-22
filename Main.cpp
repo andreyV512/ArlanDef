@@ -937,10 +937,11 @@ void __fastcall TMainForm::CompleteWork(TObject *Sender) {
 				sg->Compute1(Globals::current_typesize.w_str(),
 					(int)lcard->getSettings().frequencyPerChannel, &data[0],
 					data.size() / 2, groupName, &result, &color);
-				String s = groupName;
-				pSolidGroup->Caption = s;//groupName;
+				//String s = groupName;
+				pSolidGroup->Caption = groupName;
 				pSolidGroup->Color = clWhite;//color;
-				//Caption = groupName;
+				pSolidGroup->Refresh();
+				Caption = "Модуль электромагнитной дефектоскопии";
 			}
 			// Писать расчёт группы прочности конец
 
@@ -1120,7 +1121,8 @@ void __fastcall TMainForm::menuSaveTubeClick(TObject *Sender) {
 
 				pSolidGroup->Caption = groupName;
 				pSolidGroup->Color = clWhite;//color;
-				Caption = groupName;
+				pSolidGroup->Refresh();
+			   //	Caption = groupName;
 			}
 			else
 			{
@@ -1702,11 +1704,12 @@ void __fastcall TMainForm::pSolidGroupClick(TObject *Sender)
 				sg->Compute1(Globals::current_typesize.w_str(),
 					(int)lcard->getSettings().frequencyPerChannel, &data[0],
 					data.size() / 2, groupName, &result, &color);
-				String s;
-				pSolidGroup->Caption = s;
+			//	String s;
+			  //	pSolidGroup->Caption = s;
 				pSolidGroup->Caption = groupName;
 				//Caption = groupName;
 				pSolidGroup->Color = clWhite;//color;
+				pSolidGroup->Refresh();
 			}
 }
 //---------------------------------------------------------------------------
