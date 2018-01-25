@@ -1,10 +1,12 @@
-﻿ ISG_DLL *sg;
+﻿///FILE Main.cpp
+/////////////////////////////////////////////////////////////////////
+ ISG_DLL *sg;
 
 
 void __fastcall TMainForm::FormCreate(TObject *Sender)
 {
 .....................
-sg = InitSolid();
+sg = InitSolid();				//c 167
 	if(NULL == sg)
 	{
 		Application->MessageBoxW(L"Библиотека группы прочности не загружена",L"Ошибка",MB_OK+MB_ICONERROR);
@@ -47,3 +49,6 @@ void __fastcall TMainForm::SolidGroupClick(TObject *Sender)
 	  sg->OptionsWindow();
   }
 }
+
+void __fastcall TMainForm::FormDestroy(TObject *Sender) {
+	DestroySolid(&sg);  //176

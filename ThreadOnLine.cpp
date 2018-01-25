@@ -287,6 +287,9 @@ bool ThreadOnLine::OnlineCycle()
 			{
 				SLD->oCSTROBE->Set(false);
 				SLD->oCRESULT->Set(false);
+////test
+				TPr::pr(String("поперечн "));
+////test
 			}
 			if (ppStarted && !SLD->iCCONTROL->Get())
 			{
@@ -342,6 +345,9 @@ bool ThreadOnLine::OnlineCycle()
 			{
 				SLD->oLSTROBE->Set(false);
 				SLD->oLRESULT->Set(false);
+				////test
+				TPr::pr(String("продоль "));
+////test
 			}
 			if (!isTwoSpeed && prStarted && ((CycleTick - FirstLinerStrobeTick)
 				> (DWORD)pauseStop))
