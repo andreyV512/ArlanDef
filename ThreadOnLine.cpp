@@ -249,6 +249,8 @@ bool ThreadOnLine::OnlineCycle()
 	bool isFreeSpeed = false;
 	bool isOutSpeed = false;
 	DWORD ControlOffTime = 0;
+	int testCross = 0;
+	int testLong = 0;
 	while (Collect)
 	{
 		Sleep(delay);
@@ -288,7 +290,8 @@ bool ThreadOnLine::OnlineCycle()
 				SLD->oCSTROBE->Set(false);
 				SLD->oCRESULT->Set(false);
 ////test
-				TPr::pr(String("поперечн "));
+  ++testCross;
+				TPr::pr(String("поперечн ") + String(testCross));
 ////test
 			}
 			if (ppStarted && !SLD->iCCONTROL->Get())
@@ -346,7 +349,8 @@ bool ThreadOnLine::OnlineCycle()
 				SLD->oLSTROBE->Set(false);
 				SLD->oLRESULT->Set(false);
 				////test
-				TPr::pr(String("продоль "));
+				++testLong;
+				TPr::pr(String("продоль ") + String(testLong));
 ////test
 			}
 			if (!isTwoSpeed && prStarted && ((CycleTick - FirstLinerStrobeTick)
