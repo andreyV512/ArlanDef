@@ -4,6 +4,7 @@
 #include "Protocol.h"
 #include <Dialogs.hpp>
 #pragma package(smart_init)
+
 SignalList::SignalList(TIniFile* _ini)
 {
 	cs=new TCriticalSection();
