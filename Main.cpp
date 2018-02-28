@@ -1527,14 +1527,26 @@ void TMainForm::SendResultToASM(void) {
 	if (SystemConst::ComWithASU) {
 		if (MyCom->IsOpened()) {
 			int solid_num = 0;
-			if (pSolidGroup->Caption == "D")
-				solid_num = 1;
-			else if (pSolidGroup->Caption == "K")
-				solid_num = 2;
-			else if (pSolidGroup->Caption == "E")
-				solid_num = 3;
-			else
-				solid_num = 1;
+
+			if      (pSolidGroup->Caption == "D")solid_num = 1;
+			else if (pSolidGroup->Caption == "K")solid_num = 2;
+			else if (pSolidGroup->Caption == "E")solid_num = 3;
+			else if (pSolidGroup->Caption == "N80")solid_num = 4;
+			else if (pSolidGroup->Caption == "P110")solid_num = 5;
+			else if (pSolidGroup->Caption == "Q125")solid_num = 6;
+			else if (pSolidGroup->Caption == "L")solid_num = 7;
+			else if (pSolidGroup->Caption == "M")solid_num = 8;
+			else if (pSolidGroup->Caption == "P")solid_num = 9;
+			else if (pSolidGroup->Caption == "J-55")solid_num = 10;
+			else if (pSolidGroup->Caption == "K-55")solid_num = 11;
+			else if (pSolidGroup->Caption == "C90")solid_num = 12;
+			else if (pSolidGroup->Caption == "T95")solid_num = 13;
+			else if (pSolidGroup->Caption == "H40")solid_num = 14;
+			else if (pSolidGroup->Caption == "L80")solid_num = 15;
+			else if (pSolidGroup->Caption == "C95")solid_num = 16;
+			else if (pSolidGroup->Caption == "M65")solid_num = 17;
+			else if (pSolidGroup->Caption == "N80Q")solid_num = 18;
+			else solid_num = 1;
 			// -----
 			int iter = 0;
 			while (true) {

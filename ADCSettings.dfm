@@ -32,13 +32,8 @@ object ADCSettForm: TADCSettForm
     Font.Style = []
     ParentFont = False
     TabOrder = 0
-    ExplicitTop = -6
     object ppPage: TTabSheet
       Caption = #1053#1072#1089#1090#1088#1086#1081#1082#1080' '#1082#1086#1085#1090#1088#1086#1083#1103
-      ExplicitLeft = 0
-      ExplicitTop = 0
-      ExplicitWidth = 0
-      ExplicitHeight = 0
       object gbPP: TGroupBox
         Left = 8
         Top = 8
@@ -235,10 +230,6 @@ object ADCSettForm: TADCSettForm
     object prPage: TTabSheet
       Caption = #1053#1072#1089#1090#1088#1086#1081#1082#1080' LCard 502'
       ImageIndex = 1
-      ExplicitLeft = 0
-      ExplicitTop = 0
-      ExplicitWidth = 0
-      ExplicitHeight = 0
       object Label1: TLabel
         Left = 10
         Top = 59
@@ -354,10 +345,6 @@ object ADCSettForm: TADCSettForm
     object OtherPage: TTabSheet
       Caption = #1055#1088#1086#1095#1080#1077' '#1085#1072#1089#1090#1088#1086#1081#1082#1080
       ImageIndex = 2
-      ExplicitLeft = 0
-      ExplicitTop = 0
-      ExplicitWidth = 0
-      ExplicitHeight = 0
       object Label4: TLabel
         Left = 8
         Top = 56
@@ -445,21 +432,26 @@ object ADCSettForm: TADCSettForm
           'D'
           'K'
           'E'
+          'N80'
+          'P110'
+          'Q125'
           'L'
           'M'
-          'K72'
-          'N80'
+          'P'
+          'J-55'
+          'K-55'
+          'C90'
+          'T95'
+          'H40'
           'L80'
-          'P110')
+          'C95'
+          'M65'
+          'N80Q')
       end
     end
     object FilterPAge: TTabSheet
       Caption = #1060#1080#1083#1100#1090#1088#1072#1094#1080#1103
       ImageIndex = 4
-      ExplicitLeft = 0
-      ExplicitTop = 0
-      ExplicitWidth = 0
-      ExplicitHeight = 0
       object lWidthMedianFilter: TLabel
         Left = 17
         Top = 43
