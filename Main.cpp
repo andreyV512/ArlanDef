@@ -1519,33 +1519,42 @@ void TMainForm::NextTube(void) {
 	pNN->Caption = Globals::tube_number;
 	LastSynchronizeReturnCode = true;
 }
-
+#define GROUP_NAME_NUM(num, name) else if (pSolidGroup->Caption == name)solid_num = num;
 void TMainForm::SendResultToASM(void) {
 	StatusBarBottom->Panels->Items[0]->Text = "";
 	StatusBarBottom->Refresh();
 	LastSynchronizeReturnCode = false;
+	// ' 0-(-), 1-D, 2-K, 3-E, 4-N80, 5-P (P110), 6-Q (Q125),
+// 7-L, 8-M, 9-P, 10-J55 (J-55), 11-K55 (K-55), 12-C90, 13-T95, 14-H40, 15-L80
+//, 16-C95, 17-M65, 18-NQ(N80Q), 19-K72'
 	if (SystemConst::ComWithASU) {
 		if (MyCom->IsOpened()) {
 			int solid_num = 0;
 
 			if      (pSolidGroup->Caption == "D")solid_num = 1;
-			else if (pSolidGroup->Caption == "K")solid_num = 2;
-			else if (pSolidGroup->Caption == "E")solid_num = 3;
-			else if (pSolidGroup->Caption == "N80")solid_num = 4;
-			else if (pSolidGroup->Caption == "P110")solid_num = 5;
-			else if (pSolidGroup->Caption == "Q125")solid_num = 6;
-			else if (pSolidGroup->Caption == "L")solid_num = 7;
-			else if (pSolidGroup->Caption == "M")solid_num = 8;
-			else if (pSolidGroup->Caption == "P")solid_num = 9;
-			else if (pSolidGroup->Caption == "J-55")solid_num = 10;
-			else if (pSolidGroup->Caption == "K-55")solid_num = 11;
-			else if (pSolidGroup->Caption == "C90")solid_num = 12;
-			else if (pSolidGroup->Caption == "T95")solid_num = 13;
-			else if (pSolidGroup->Caption == "H40")solid_num = 14;
-			else if (pSolidGroup->Caption == "L80")solid_num = 15;
-			else if (pSolidGroup->Caption == "C95")solid_num = 16;
-			else if (pSolidGroup->Caption == "M65")solid_num = 17;
-			else if (pSolidGroup->Caption == "N80Q")solid_num = 18;
+			GROUP_NAME_NUM(2, "K")
+			GROUP_NAME_NUM(3, "E")
+			GROUP_NAME_NUM(4, "N80")
+			GROUP_NAME_NUM(5, "P")
+			GROUP_NAME_NUM(5, "P110")
+			GROUP_NAME_NUM(6, "Q")
+			GROUP_NAME_NUM(6, "Q125")
+			GROUP_NAME_NUM(7, "L")
+			GROUP_NAME_NUM(8, "M")
+			GROUP_NAME_NUM(9, "P")
+			GROUP_NAME_NUM(10, "J55")
+			GROUP_NAME_NUM(10, "J-55")
+			GROUP_NAME_NUM(11, "K55")
+			GROUP_NAME_NUM(11, "K-55")
+			GROUP_NAME_NUM(12, "C90")
+			GROUP_NAME_NUM(13, "T95")
+			GROUP_NAME_NUM(14, "H40")
+			GROUP_NAME_NUM(15, "L80")
+			GROUP_NAME_NUM(16, "C95")
+			GROUP_NAME_NUM(17, "M65")
+			GROUP_NAME_NUM(18, "NQ")
+			GROUP_NAME_NUM(18, "N80Q")
+			GROUP_NAME_NUM(19, "K72")
 			else solid_num = 1;
 			// -----
 			int iter = 0;
@@ -1572,6 +1581,7 @@ void TMainForm::SendResultToASM(void) {
 	if (IsSendResultToProtocol)
 		MyCom->SendToProtocol();
 }
+#undef GROUP_NAME_NUM
 
 // --------------------------------------------------------------------------------
 void __fastcall TMainForm::menuTestSpectroscopeClick(TObject *Sender) {
