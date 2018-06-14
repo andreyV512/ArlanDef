@@ -9,23 +9,23 @@
 USEFORM("ReportsView.cpp", FormReport);
 USEFORM("Settings.cpp", SettingsForm);
 USEFORM("Protocol.cpp", Pr);
+USEFORM("Manage.cpp", ManageForm);
 USEFORM("uFRTubeHistory.cpp", FRTubeHistory); /* TFrame: File Type */
 USEFORM("uFRHistory.cpp", FRHistory); /* TFrame: File Type */
 USEFORM("uFASMTest.cpp", FASMTest);
 USEFORM("ViewEtalons.cpp", FormViewEtalons);
 USEFORM("View.cpp", ViewForm);
-USEFORM("SolidGroupTest.cpp", SGForm);
 USEFORM("SolidGroupGraphics.cpp", SGGraphForm);
 USEFORM("SolidGroup.cpp", SolidGroupForm);
+USEFORM("SolidGroupTest.cpp", SGForm);
 USEFORM("SpectroSettings.cpp", SpectroSettingForm);
-USEFORM("Manage.cpp", ManageForm);
 USEFORM("ABOUT_NTC_NK_URAN.cpp", AboutBox1);
 USEFORM("A1730\uFSignalsState.cpp", FSignalsState);
 USEFORM("A1730\uFRSigPanel.cpp", FRSigPanel); /* TFrame: File Type */
 USEFORM("ADCSettings.cpp", ADCSettForm);
 USEFORM("ColorSettings.cpp", FormColor);
-USEFORM("DataModule.cpp", DM); /* TDataModule: File Type */
 USEFORM("Main.cpp", MainForm);
+USEFORM("DataModule.cpp", DM); /* TDataModule: File Type */
 USEFORM("GraphicsCenters.cpp", GraphicCentersForm);
 //---------------------------------------------------------------------------
 WINAPI _tWinMain(HINSTANCE, HINSTANCE, LPTSTR, int)

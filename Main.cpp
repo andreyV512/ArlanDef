@@ -17,6 +17,7 @@
 #include "SpectroSettings.h"
 #include "Classes.hpp"
 #include "Math.h"
+#include "Correction.h"
 
 // ---------------------------------------------------------------------------
 #pragma package(smart_init)
@@ -33,6 +34,7 @@ bool LastSynchronizeReturnCode;
 
 // ---------------------------------------------------------------------------
 __fastcall TMainForm::TMainForm(TComponent* Owner) : TForm(Owner) {
+	Correction::Init();
 	ini = new TIniFile(Globals::IniFileName);
 
 	MainForm->Tag = 0; // запуск произведен 1й раз очистка буфера не требуется
@@ -1512,6 +1514,7 @@ void TMainForm::NextTube(void) {
 	GetTubeNumber();
 	if (!LastSynchronizeReturnCode)
 		return;
+	Correction::isEtalon = pNN->Caption == "5555555555";
 	if (pNN->Caption != Globals::tube_number && pNN->Caption != "5555555555")
 		frHistory->Add(pNN->Caption, pSolidGroup->Caption, pSolidGroup->Color,
 		lResult->Caption, lResult->Color, lCut1->Caption, lCut2->Caption);

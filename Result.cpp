@@ -7,6 +7,7 @@
 #include "DspFilters/Dsp.h"
 #include <Math.hpp>
 #include <Series.hpp>
+#include "Correction.h"
 //---------------------------------------------------------------------------
 #pragma package(smart_init)
 //-----------------------------------------------------------------------------
@@ -72,7 +73,7 @@ Result::Result(int sensors)
 	Filtered_Data.resize(Globals::max_zones);
 	Source_Data.resize(Globals::max_zones);
 
-	for (int i = 0; i < Filtered_Data.size(); i++)
+	for (unsigned i = 0; i < Filtered_Data.size(); i++)
 	{
 		Filtered_Data[i].resize(sensors);
 		Source_Data[i].resize(sensors);
@@ -98,7 +99,7 @@ void Result::Init()
 	zone_data.set_length(Globals::max_zones);
 
 	sensor_data.resize(Globals::max_zones);
-	for (int i = 0; i < sensor_data.size(); i++)
+	for (unsigned i = 0; i < sensor_data.size(); i++)
 		sensor_data[i].resize(Globals::max_sensors);
 
 	// задаем цвета, которые хочет юзер
@@ -112,7 +113,7 @@ void Result::Init()
 	delete ini;
 
 	data.resize(Globals::max_zones);
-	for (int i = 0; i < data.size(); i++)
+	for (unsigned i = 0; i < data.size(); i++)
 		data[i].resize(Globals::max_sensors);
 
 }
@@ -1012,8 +1013,8 @@ void Result::DeleteData()
 	meas_per_zone = 0;
 	total_meas = 0;
 
-	for (int i = 0; i < Filtered_Data.size(); i++)
-		for (long j = 0; j < Filtered_Data[i].size(); j++)
+	for (unsigned i = 0; i < Filtered_Data.size(); i++)
+		for (unsigned j = 0; j < Filtered_Data[i].size(); j++)
 		{
 			Filtered_Data[i][j].clear();
 			Source_Data[i][j].clear();
@@ -1021,6 +1022,31 @@ void Result::DeleteData()
 		}
 }
 //----------------------------------------------------------------------------
+	Result::TGain::TGain(): value(0.0){}
+	Result::TGain::TGain(double val): value(val){}
+	void Result::TGain::operator=(double val)
+	{
+		value = val;
+	}
+	Result::TGain::operator  double()
+	{
+		return value * Correction::coeff;
+    }
+
+	Result::VecGain::VecGain(){}
+	Result::VecGain::VecGain(std::vector<double> &val)
+	{
+		operator=(val);
+	}
+	void Result::VecGain::operator=(std::vector<double> &val)
+	{
+		clear();
+		for(unsigned i = 0; i < val.size(); ++i)
+		{
+			push_back(val[i]);
+		}
+    }
+//--------------------------------------------------------------------------
 
 void Result::SetGains(vector <double> _Gain)
 {
@@ -1055,7 +1081,7 @@ void Result::AutoCalibration(int zone)
 	{
 		gain[i] = averageMaximus / ( (sensor_data[zone][i] / gain[i]) );
 		String gain_str = "Gain " + IntToStr(Globals::current_diameter);
-		ini->WriteFloat( gain_str , "Gain"+IntToStr(i),StrToFloat(gain[i]));
+		ini->WriteFloat( gain_str , "Gain"+IntToStr(i),gain[i]);
 	}
 	delete ini;
 }

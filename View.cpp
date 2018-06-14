@@ -66,7 +66,7 @@ void TViewForm::ViewFormInit()
 
 
 	int ws = Screen->Width;
-	total_charts = Math::Max(Singleton::Instance()->CrossResult->sensors,Singleton::Instance()->LinearResult->sensors);
+	total_charts = Math::Max(Singleton::Instance()->CrossResult->sensors,(int)Singleton::Instance()->LinearResult->sensors);
 	byte cols = 4;         		// кол-во столбцов, в которых расположены графики
 	short vm = 10, hm = 20;		// верт отступ, гориз отступ
 	short chh = 150, chw = 300;	// высота чарта, ширина чарта
@@ -159,14 +159,14 @@ void __fastcall TViewForm::ViewCrossChartClickSeries(TCustomChart *Sender, TChar
 // вывод измерений по всем датчикам в конкретной зоне (поперечный)
 	String gain_str = "Gain " + IntToStr(Globals::current_diameter);
 	CrossPos=ValueIndex;
-	int i;
+	unsigned i;
 	for ( i = 0; i < Singleton::Instance()->CrossResult->sensors; i++)
 	{
 		arc[i]->Visible=true;
 		arGain[i]->Visible=true;
 //		ViewCrossChart->Series[i]->ValueColor[ValueIndex]=SelectedColor;
 		Singleton::Instance()->CrossResult->PutDataOnChart(arc[i],Sender,ValueIndex,i);
-		arGain[i]->Text = FloatToStr(ini->ReadFloat( gain_str,"Gain"+IntToStr(i),1) );
+		arGain[i]->Text = FloatToStr(ini->ReadFloat( gain_str,"Gain"+IntToStr((int)i),1) );
 	}
 // выводим номер зоны в соответствующую панель
 	this->pCrossZone->Caption="Зона: "+IntToStr(ValueIndex+1);
@@ -322,7 +322,7 @@ void __fastcall TViewForm::ViewCrossChartKeyDown(TObject *Sender, WORD &Key, TSh
 				}
 		if( (Key==37) || (Key==39) )
 		{
-			int i;
+			unsigned i;
 			Singleton::Instance()->CrossResult->PutResultOnChart(ViewCrossChart,ViewForm);
 			String gain_str = "Gain " + IntToStr(Globals::current_diameter);
 			for ( i = 0; i < Singleton::Instance()->CrossResult->sensors; i++)
@@ -331,7 +331,7 @@ void __fastcall TViewForm::ViewCrossChartKeyDown(TObject *Sender, WORD &Key, TSh
 				arGain[i]->Visible=true;
 				ViewCrossChart->Series[i]->ValueColor[CrossPos]=SelectedColor;
 				Singleton::Instance()->CrossResult->PutDataOnChart(arc[i],ViewCrossChart,CrossPos,i);
-				arGain[i]->Text = FloatToStr(ini->ReadFloat(gain_str,"Gain"+IntToStr(i),1) );
+				arGain[i]->Text = FloatToStr(ini->ReadFloat(gain_str,"Gain"+IntToStr((int)i),1) );
 			}
 		// выводим номер зоны в соответствующую панель
 			this->pCrossZone->Caption="Зона: "+IntToStr(CrossPos+1);

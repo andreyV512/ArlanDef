@@ -34,7 +34,48 @@ protected:
 	//! кол-во измерений первой мертвой зоны
 	double meas_dead_zone_start;
 	//! вектор усилений для датчиков
-	vector < double > gain;
+
+    class TGain
+{
+public:
+	double value;
+public:
+	TGain();
+	TGain(double val);
+   //	{
+	 //   value = val;
+  //  }
+	void operator=(double val);
+  //	{
+  //		value = val;
+   //	}
+	operator  double();
+   //	{
+	//    return value * coeff;
+  //  }
+};
+
+class VecGain : public std::vector<TGain>
+{
+public:
+	VecGain();
+	VecGain(std::vector<double> &val);
+   //	{
+   //		operator=(val);
+  //	}
+	void operator=(std::vector<double> &val);
+  //	{
+  //		clear();
+  //		for(int i = 0; i < val.size(); ++i)
+  //		{
+   //			push_back(val[i]);
+   //		}
+   // }
+};
+
+
+  //	vector < double > gain;
+	VecGain gain;
 
 private:
 	//! Инициализация переменных нужных как для Result,так и для потомков

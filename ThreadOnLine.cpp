@@ -5,6 +5,7 @@
 #include "ThreadOnLine.h"
 #include "Math.h"
 #include "Solenoid.h"
+#include "Correction.h"
 // ---------------------------------------------------------------------------
 #pragma package(smart_init)
 
@@ -89,6 +90,7 @@ void __fastcall ThreadOnLine::Execute()
 // -----подготовка к работе от самого начала до движения трубы----------------
 UnicodeString ThreadOnLine::PrepareForWork()
 {
+
 	// проверяем, включен ли модуль размагничивания и группы прочности
 	if (SystemConst::isSolidity)
 	{
@@ -128,10 +130,11 @@ UnicodeString ThreadOnLine::PrepareForWork()
 	SLD->oLSTROBE->Set(false);
 	SLD->oLRESULT->Set(false);
 	SLD->oCRESULT->Set(false);
-
+    Correction::isEtalon = false;
 	Synchronize(NextTube);
 	if (!LastSynchronizeReturnCode)
 		return "Не получили новую трубу (из АСУ)!";
+	Correction::Start();
 	if (!Globals::tube_transit)
 	{
 		SLD->oCSOLPOW->Set(true);

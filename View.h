@@ -74,7 +74,7 @@ __published:	// IDE-managed Components
 private:	// User declarations
 	TChart * arc[Globals::max_sensors];	// массив чартов для отображения инфы по датчикам
 	void  ViewFormInit();				// инициализация формы
-	short total_charts;					// общее кол-во динамических чартов
+	int total_charts;					// общее кол-во динамических чартов
 	TEdit *arGain[Globals::max_sensors];// массив эдитов с усилениями по каналу (датчику)
 	TIniFile *ini;
 	bool repaint;						// если сменили усиления - перерисуем
