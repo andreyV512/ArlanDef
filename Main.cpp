@@ -1151,6 +1151,7 @@ void __fastcall TMainForm::menuSaveTubeClick(TObject *Sender) {
 
 // ------------------------------------------------------------------------------
 void __fastcall TMainForm::menuLoadTubeClick(TObject *Sender) {
+	Correction::Init();
 	if (OpenDialogFromFile->Execute()) {
 		ClearCharts();
 		ReadFromFile((OpenDialogFromFile->FileName).c_str());
@@ -1512,14 +1513,19 @@ void TMainForm::GetTubeNumber(void) {
 
 void TMainForm::NextTube(void) {
 	GetTubeNumber();
+	Correction::isEtalon = Globals::tube_number == "5555555555";
+	AnsiString b = Correction::isEtalon ? "Эталон" : "Труба";
+	TPr::pr(b);
+	Correction::Start();
 	if (!LastSynchronizeReturnCode)
 		return;
-	Correction::isEtalon = pNN->Caption == "5555555555";
+
 	if (pNN->Caption != Globals::tube_number && pNN->Caption != "5555555555")
 		frHistory->Add(pNN->Caption, pSolidGroup->Caption, pSolidGroup->Color,
 		lResult->Caption, lResult->Color, lCut1->Caption, lCut2->Caption);
 	ClearCharts();
 	pNN->Caption = Globals::tube_number;
+
 	LastSynchronizeReturnCode = true;
 }
 #define GROUP_NAME_NUM(num, name) else if (pSolidGroup->Caption == name)solid_num = num;

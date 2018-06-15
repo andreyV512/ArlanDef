@@ -382,9 +382,10 @@
 				<BuildOrder>50</BuildOrder>
 			</None>
 			<FormResources Include="ReportsView.dfm"/>
-			<FormResources Include="Settings.dfm"/>
 			<FormResources Include="Protocol.dfm"/>
+			<FormResources Include="Settings.dfm"/>
 			<FormResources Include="Manage.dfm"/>
+			<FormResources Include="Main.dfm"/>
 			<FormResources Include="uFRTubeHistory.dfm"/>
 			<FormResources Include="uFRHistory.dfm"/>
 			<FormResources Include="uFASMTest.dfm"/>
@@ -399,7 +400,6 @@
 			<FormResources Include="A1730\uFRSigPanel.dfm"/>
 			<FormResources Include="ADCSettings.dfm"/>
 			<FormResources Include="ColorSettings.dfm"/>
-			<FormResources Include="Main.dfm"/>
 			<FormResources Include="DataModule.dfm"/>
 			<FormResources Include="GraphicsCenters.dfm"/>
 			<BuildConfiguration Include="Release">
