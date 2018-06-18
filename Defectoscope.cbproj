@@ -91,7 +91,7 @@
 			<ILINK_TranslatedLibraryPath>$(BDSLIB)\$(PLATFORM)\debug\$(LANGDIR);$(ILINK_TranslatedLibraryPath)</ILINK_TranslatedLibraryPath>
 		</PropertyGroup>
 		<PropertyGroup Condition="'$(Cfg_1_Win32)'!=''">
-			<Defines>_DEBUG;$(Defines)</Defines>
+			<Defines>_DEBUG_OFF;$(Defines)</Defines>
 			<BCC_OutputDir>C:\Project\Eagle DefOnline\Debug\Win32\</BCC_OutputDir>
 			<BCC_wpar>false</BCC_wpar>
 			<BCC_wiip>false</BCC_wiip>
